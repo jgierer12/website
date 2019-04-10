@@ -1,0 +1,46 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "start": "npm run develop",
+    "preserve": "run-s build",
+    "serve": "gatsby serve",
+    "test": "run-s lint",
+    "format": "run-p --print-label format:*",
+    "format:js": "run-s \"_eslint -- --fix\"",
+    "format:other": "run-s \"_prettier -- --write\"",
+    "lint": "run-p --print-label --continue-on-error lint:*",
+    "lint:js": "run-s _eslint",
+    "lint:other": "run-s _prettier",
+    "_eslint": "eslint --color --ignore-path .gitignore \"**/*.js\"",
+    "_prettier": "prettier --check --ignore-path .gitignore \"**/*.{json,md,mdx,yml,graphql}\""
+  },
+  "dependencies": {
+    "@emotion/core": "^10.0.10",
+    "@emotion/styled": "^10.0.10",
+    "boxicons": "^1.9.3",
+    "destyle.css": "^1.0.5",
+    "gatsby": "^2.3.17",
+    "gatsby-image": "^2.0.37",
+    "gatsby-plugin-emotion": "^4.0.6",
+    "gatsby-plugin-manifest": "^2.0.29",
+    "gatsby-plugin-netlify": "^2.0.13",
+    "gatsby-plugin-react-helmet": "^3.0.12",
+    "gatsby-plugin-react-svg": "^2.1.1",
+    "gatsby-plugin-sharp": "^2.0.33",
+    "gatsby-source-filesystem": "^2.0.29",
+    "gatsby-transformer-sharp": "^2.1.17",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.0",
+    "typeface-inter": "^3.3.0"
+  },
+  "devDependencies": {
+    "@jgierer12/js-configs": "^0.1.1",
+    "deepmerge": "^3.2.0",
+    "eslint": "^5.16.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.16.4"
+  }
+}
