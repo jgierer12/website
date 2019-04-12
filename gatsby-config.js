@@ -6,6 +6,15 @@ module.exports = {
     `gatsby-plugin-react-svg`,
     `gatsby-plugin-emotion`,
     {
+      resolve: `gatsby-plugin-indieweb`,
+      options: {
+        auth: {
+          twitter: `jgierer12`,
+          github: `jgierer12`,
+        },
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
