@@ -12,6 +12,7 @@ module.exports = {
           twitter: `jgierer12`,
           github: `jgierer12`,
         },
+        webmention: `jonasgierer.com`,
       },
     },
     {

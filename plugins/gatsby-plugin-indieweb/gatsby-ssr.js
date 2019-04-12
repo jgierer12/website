@@ -15,12 +15,23 @@ const getAuthUrl = (provider, login) => {
   }
 };
 
+const getWebmentionUrl = (type, username) => {
+  const base = `https://webmention.io/${username}`;
+  switch (type) {
+    case `webmention`:
+      return `${base}/webmention`;
+    case `pingback`:
+      return `${base}/xmlrpc`;
+  }
+};
+
 const defaultOptions = {
   auth: {
     twitter: false,
     github: false,
     email: false,
   },
+  webmention: false,
 };
 
 module.exports.onPreRenderHTML = (
@@ -48,6 +59,18 @@ module.exports.onPreRenderHTML = (
         )
       );
     });
+  }
+
+  if (options.webmention) {
+    headComponents.push(
+      ...[`webmention`, `pingback`].map((type, i) =>
+        React.createElement(`link`, {
+          href: getWebmentionUrl(type, options.webmention),
+          rel: type,
+          key: getKey(`webmention`, i),
+        })
+      )
+    );
   }
 
   replaceHeadComponents(headComponents);
