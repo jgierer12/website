@@ -43,7 +43,7 @@ const Highlight = ({ children }) => (
   <em
     css={{
       color: `#85927A`,
-      fontFamily: `Inter Medium`,
+      fontWeight: `500`,
       fontStyle: `normal`,
     }}
   >
@@ -126,7 +126,7 @@ export default ({ data }) => (
             fontSize: `1.7rem`,
             transform: `translateX(-2px)`,
             color: `#647753`,
-            fontFamily: `Inter Medium`,
+            fontWeight: `500`,
           }}
         >
           Jonas Gierer
