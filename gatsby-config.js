@@ -2,6 +2,7 @@ const path = require(`path`);
 
 module.exports = {
   plugins: [
+    // Convenience
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-react-svg`,
     `gatsby-plugin-emotion`,
@@ -15,6 +16,15 @@ module.exports = {
         webmention: `jonasgierer.com`,
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        start_url: `/`,
+        icon: `src/icon.png`,
+      },
+    },
+
+    // Images
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -34,13 +44,20 @@ module.exports = {
         defaultQuality: 80,
       },
     },
+
+    // Content
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        start_url: `/`,
-        icon: `src/icon.png`,
+        name: `posts`,
+        path: path.join(__dirname, `src`, `content`, `posts`),
       },
     },
+    {
+      resolve: `gatsby-mdx`,
+    },
+
+    // Deploy
     `gatsby-plugin-netlify`,
   ],
 };
