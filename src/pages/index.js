@@ -1,13 +1,12 @@
-import React from "react";
-import Helmet from "react-helmet";
+import * as React from "react";
 import { graphql } from "gatsby";
-import { Global } from "@emotion/core";
 import Img from "gatsby-image";
-import "destyle.css";
-import "typeface-inter";
 import TwitterIcon from "boxicons/svg/logos/bxl-twitter.svg";
 import GitHubIcon from "boxicons/svg/logos/bxl-github.svg";
 import EmailIcon from "boxicons/svg/solid/bxs-envelope.svg";
+
+import * as colors from "../colors";
+import { Layout } from "../components/layout";
 
 export const query = graphql`
   query {
@@ -27,10 +26,10 @@ const SocialLink = ({ icon: Icon, label, ...props }) => (
       {...props}
       aria-label={label}
       css={{
-        color: `#A2AC9A`,
+        color: colors.greens.light,
         transition: `color 0.2s ease-in-out`,
         "&:hover": {
-          color: `#647753`,
+          color: colors.greens.dark,
         },
       }}
     >
@@ -42,7 +41,7 @@ const SocialLink = ({ icon: Icon, label, ...props }) => (
 const Highlight = ({ children }) => (
   <em
     css={{
-      color: `#85927A`,
+      color: colors.greens.medium,
       fontWeight: `500`,
       fontStyle: `normal`,
     }}
@@ -52,30 +51,7 @@ const Highlight = ({ children }) => (
 );
 
 export default ({ data }) => (
-  <>
-    <Helmet>
-      <html lang="en" />
-      <title>Jonas Gierer</title>
-      <meta
-        name="description"
-        content="Hi! My name is Jonas Gierer. I love creating modern and accessible websites and apps using JavaScript, React and other awesome technologies."
-      />
-    </Helmet>
-    <Global
-      styles={{
-        html: {
-          "&, body, #___gatsby, #___gatsby > div": {
-            height: `100%`,
-            width: `100%`,
-          },
-          fontSize: `28px`,
-          lineHeight: `1.3`,
-          "@media screen and (max-width: 900px)": {
-            fontSize: `22px`,
-          },
-        },
-      }}
-    />
+  <Layout>
     <main
       css={{
         minHeight: `100%`,
@@ -83,14 +59,8 @@ export default ({ data }) => (
         display: `flex`,
         alignItems: `center`,
         justifyContent: `center`,
-        fontFamily: `Inter`,
-        color: `#484A47`,
         "@media screen and (max-width: 900px)": {
           flexDirection: `column`,
-        },
-        "& ::selection": {
-          background: `#484A47`,
-          color: `white`,
         },
       }}
     >
@@ -102,7 +72,7 @@ export default ({ data }) => (
           "&::after": {
             content: `''`,
             mixBlendMode: `multiply`,
-            background: `#BCE999`,
+            background: colors.greens.primary,
             opacity: `0.5`,
             width: `100%`,
             height: `100%`,
@@ -125,7 +95,7 @@ export default ({ data }) => (
           css={{
             fontSize: `1.7rem`,
             transform: `translateX(-2px)`,
-            color: `#647753`,
+            color: colors.greens.dark,
             fontWeight: `500`,
           }}
         >
@@ -164,5 +134,5 @@ export default ({ data }) => (
         </ul>
       </div>
     </main>
-  </>
+  </Layout>
 );
