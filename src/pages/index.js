@@ -157,7 +157,7 @@ export default ({ data }) => (
             icon={GitHubIcon}
           />
           <SocialLink
-            href="mailto:hello@jonasgierer.com"
+            href="mailto:jonas@gierer.xyz"
             label="Send me an email"
             icon={EmailIcon}
           />
