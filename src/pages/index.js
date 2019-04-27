@@ -118,7 +118,7 @@ export default ({ data }) => (
             icon={GitHubIcon}
           />
           <NavItemIcon
-            to="mailto:hello@jonasgierer.com"
+            href="mailto:jonas@gierer.xyz"
             label="Send me an email"
             icon={EmailIcon}
           />
