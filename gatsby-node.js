@@ -7,7 +7,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     createNodeField({
       name: `slug`,
       node,
-      value: createFilePath({ node, getNode }),
+      value: createFilePath({ node, getNode }).replace(/\/$/, ``),
     });
   }
 };
