@@ -7,6 +7,7 @@ import EmailIcon from "boxicons/svg/solid/bxs-envelope.svg";
 
 import * as colors from "../colors";
 import { Layout } from "../components/layout";
+import { Nav, NavItemIcon, NavItemText } from "../components/index-nav";
 
 export const query = graphql`
   query {
@@ -19,24 +20,6 @@ export const query = graphql`
     }
   }
 `;
-
-const SocialLink = ({ icon: Icon, label, ...props }) => (
-  <li>
-    <a
-      {...props}
-      aria-label={label}
-      css={{
-        color: colors.greens.light,
-        transition: `color 0.2s ease-in-out`,
-        "&:hover": {
-          color: colors.greens.dark,
-        },
-      }}
-    >
-      <Icon role="img" fill="currentColor" width="50px" height="50px" />
-    </a>
-  </li>
-);
 
 const Highlight = ({ children }) => (
   <em
@@ -107,31 +90,28 @@ export default ({ data }) => (
           <Highlight>JavaScript</Highlight>, <Highlight>React</Highlight> and
           other awesome technologies.
         </p>
-        <ul
+        <Nav
           css={{
-            marginTop: `1rem`,
-            display: `flex`,
-            "& > * + *": {
-              marginLeft: `2rem`,
-            },
+            marginTop: `20px`,
           }}
         >
-          <SocialLink
-            href="https://twitter.com/jgierer12"
+          <NavItemIcon
+            to="https://twitter.com/jgierer12"
             label="Visit my Twitter profile"
             icon={TwitterIcon}
           />
-          <SocialLink
-            href="https://github.com/jgierer12"
+          <NavItemIcon
+            to="https://github.com/jgierer12"
             label="Visit my GitHub profile"
             icon={GitHubIcon}
           />
-          <SocialLink
-            href="mailto:hello@jonasgierer.com"
+          <NavItemIcon
+            to="mailto:hello@jonasgierer.com"
             label="Send me an email"
             icon={EmailIcon}
           />
-        </ul>
+          <NavItemText to="/blog">Blog</NavItemText>
+        </Nav>
       </div>
     </main>
   </Layout>
