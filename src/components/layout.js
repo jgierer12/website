@@ -6,7 +6,7 @@ import "typeface-inter";
 
 import * as colors from "../colors";
 import { SEO } from "./seo";
-import { SearchProvider } from "./search-context";
+import { SearchContextProvider } from "./search-context";
 
 export const Layout = withSlots(
   [`SEO`],
@@ -33,7 +33,7 @@ export const Layout = withSlots(
             },
           }}
         />
-        <SearchProvider>{children}</SearchProvider>
+        <SearchContextProvider>{children}</SearchContextProvider>
       </>
     );
   }
