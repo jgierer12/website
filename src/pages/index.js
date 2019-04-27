@@ -1,6 +1,5 @@
 import * as React from "react";
 import { graphql } from "gatsby";
-import Img from "gatsby-image";
 import TwitterIcon from "boxicons/svg/logos/bxl-twitter.svg";
 import GitHubIcon from "boxicons/svg/logos/bxl-github.svg";
 import EmailIcon from "boxicons/svg/solid/bxs-envelope.svg";
@@ -8,6 +7,7 @@ import EmailIcon from "boxicons/svg/solid/bxs-envelope.svg";
 import * as colors from "../colors";
 import { Layout } from "../components/layout";
 import { Nav, NavItemIcon, NavItemText } from "../components/index-nav";
+import { TintedImage } from "../components/tinted-image";
 
 export const query = graphql`
   query {
@@ -50,7 +50,7 @@ export default ({ data }) => (
         lineHeight: `1.25`,
       }}
     >
-      <Img
+      <TintedImage
         fixed={data.file.childImageSharp.fixed}
         css={{
           borderRadius: `50%`,
@@ -61,15 +61,9 @@ export default ({ data }) => (
             width: `275px !important`,
             height: `275px !important`,
           },
-          "&::after": {
-            content: `''`,
-            mixBlendMode: `multiply`,
-            background: colors.greens.primary,
-            opacity: `0.5`,
-            width: `100%`,
-            height: `100%`,
-            position: `absolute`,
-          },
+        }}
+        tintCss={{
+          background: colors.greens.primary,
         }}
       />
       <div
