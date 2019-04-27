@@ -39,13 +39,15 @@ export default ({ data }) => (
     <main
       css={{
         minHeight: `100%`,
-        padding: `2rem`,
+        padding: `20px`,
         display: `flex`,
         alignItems: `center`,
         justifyContent: `center`,
-        "@media screen and (max-width: 900px)": {
+        "@media screen and (max-width: 800px)": {
           flexDirection: `column`,
         },
+        fontSize: `150%`,
+        lineHeight: `1.25`,
       }}
     >
       <Img
@@ -53,6 +55,12 @@ export default ({ data }) => (
         css={{
           borderRadius: `50%`,
           flexShrink: 0,
+          width: `335px !important`,
+          height: `335px !important`,
+          "@media screen and (min-width: 600px) and (max-width: 800px)": {
+            width: `275px !important`,
+            height: `275px !important`,
+          },
           "&::after": {
             content: `''`,
             mixBlendMode: `multiply`,
@@ -66,18 +74,21 @@ export default ({ data }) => (
       />
       <div
         css={{
-          width: `15rem`,
-          marginLeft: `1rem`,
-          marginTop: `1rem`,
+          width: `420px`,
+          margin: `20px`,
           "& > * + *": {
-            marginTop: `0.5rem`,
+            marginTop: `10px`,
+          },
+          "@media screen and (max-width: 800px)": {
+            margin: `20px 10px`,
+            width: `auto`,
           },
         }}
       >
         <p>Hi! My name is</p>
         <h1
           css={{
-            fontSize: `1.7rem`,
+            fontSize: `175%`,
             transform: `translateX(-2px)`,
             color: colors.greens.dark,
             fontWeight: `500`,
