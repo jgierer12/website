@@ -35,6 +35,7 @@ const Highlight = ({ children }) => (
 
 export default ({ data }) => (
   <Layout>
+    <Layout.SEO description="Hi! My name is Jonas Gierer. I love creating modern and accessible websites and apps using JavaScript, React and other awesome technologies." />
     <main
       css={{
         minHeight: `100%`,
