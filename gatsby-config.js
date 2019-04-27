@@ -21,6 +21,11 @@ module.exports = {
       options: {
         start_url: `/`,
         icon: `src/icon.png`,
+        name: `Jonas Gierer`,
+        short_name: `Jonas G.`,
+        display: `minimal-ui`,
+        theme_color: `#85927A`,
+        background_color: `#FFFFFF`,
       },
     },
 
@@ -36,11 +41,6 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sharp`,
       options: {
-        name: `Jonas Gierer`,
-        short_name: `Jonas G.`,
-        display: `minimal-ui`,
-        theme_color: `#85927A`,
-        background_color: `#FFFFFF`,
         defaultQuality: 80,
       },
     },
