@@ -6,6 +6,7 @@ import "typeface-inter";
 
 import * as colors from "../colors";
 import { SEO } from "./seo";
+import { SearchProvider } from "./search-context";
 
 export const Layout = withSlots(
   [`SEO`],
@@ -21,10 +22,10 @@ export const Layout = withSlots(
                 width: `100%`,
               },
               font: `120%/1.5 Inter, sans-serif`,
-              color: colors.black,
+              color: colors.mono.black,
               "& ::selection": {
-                background: colors.black,
-                color: colors.white,
+                background: colors.mono.black,
+                color: colors.mono.white,
               },
               "@media screen and (max-width: 900px)": {
                 fontSize: `18px`,
@@ -32,7 +33,7 @@ export const Layout = withSlots(
             },
           }}
         />
-        {children}
+        <SearchProvider>{children}</SearchProvider>
       </>
     );
   }
