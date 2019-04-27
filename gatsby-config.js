@@ -20,7 +20,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         start_url: `/`,
-        icon: `src/icon.png`,
+        icon: `src/images/icon.png`,
         name: `Jonas Gierer`,
         short_name: `Jonas G.`,
         display: `minimal-ui`,
