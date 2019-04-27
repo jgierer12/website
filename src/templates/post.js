@@ -6,6 +6,7 @@ import "typeface-space-mono";
 import "typeface-pt-serif";
 
 import { Layout } from "../components/layout";
+import { BlogLayout } from "../components/blog-layout";
 
 export const query = graphql`
   query($id: String) {
@@ -26,24 +27,27 @@ export default ({ data: { mdx } }) => {
   return (
     <Layout>
       <Layout.SEO description={mdx.excerpt} />
-      <article
-        css={{
-          fontFamily: `PT Serif, serif`,
-          maxWidth: `720px`,
-          margin: `auto`,
-        }}
-      >
-        <h1>{mdx.frontmatter.title}</h1>
-        <MDXProvider
-          components={{
-            inlineCode: props => (
-              <code {...props} css={{ fontFamily: `Space Mono, monospace` }} />
-            ),
+      <BlogLayout>
+        <article
+          css={{
+            fontFamily: `PT Serif, serif`,
           }}
         >
-          <MDXRenderer>{mdx.code.body}</MDXRenderer>
-        </MDXProvider>
-      </article>
+          <h1>{mdx.frontmatter.title}</h1>
+          <MDXProvider
+            components={{
+              inlineCode: props => (
+                <code
+                  {...props}
+                  css={{ fontFamily: `Space Mono, monospace` }}
+                />
+              ),
+            }}
+          >
+            <MDXRenderer>{mdx.code.body}</MDXRenderer>
+          </MDXProvider>
+        </article>
+      </BlogLayout>
     </Layout>
   );
 };
