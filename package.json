@@ -38,7 +38,10 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0",
-    "typeface-inter": "^3.3.0"
+    "react-puggy": "^0.1.1",
+    "typeface-inter": "^3.3.0",
+    "typeface-pt-serif": "^0.0.72",
+    "typeface-space-mono": "^0.0.71"
   },
   "devDependencies": {
     "@jgierer12/js-configs": "^0.1.1",
