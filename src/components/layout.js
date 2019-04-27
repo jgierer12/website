@@ -1,44 +1,39 @@
 import * as React from "react";
-import Helmet from "react-helmet";
 import { Global } from "@emotion/core";
+import { withSlots } from "react-puggy";
 import "destyle.css";
 import "typeface-inter";
 
 import * as colors from "../colors";
+import { SEO } from "./seo";
 
-export const Layout = ({ children }) => {
-  return (
-    <>
-      <Helmet>
-        <html lang="en" />
-        <title>Jonas Gierer</title>
-        <meta
-          name="description"
-          content="Hi! My name is Jonas Gierer. I love creating modern and accessible websites and apps using JavaScript, React and other awesome technologies."
+export const Layout = withSlots(
+  [`SEO`],
+  ({ slotProps: { SEO: seoProps = {} }, children }) => {
+    return (
+      <>
+        <SEO {...seoProps} />
+        <Global
+          styles={{
+            html: {
+              "&, body, #___gatsby, #___gatsby > div": {
+                height: `100%`,
+                width: `100%`,
+              },
+              font: `120%/1.5 Inter, sans-serif`,
+              color: colors.black,
+              "& ::selection": {
+                background: colors.black,
+                color: colors.white,
+              },
+              "@media screen and (max-width: 900px)": {
+                fontSize: `18px`,
+              },
+            },
+          }}
         />
-      </Helmet>
-      <Global
-        styles={{
-          html: {
-            "&, body, #___gatsby, #___gatsby > div": {
-              height: `100%`,
-              width: `100%`,
-            },
-            fontSize: `28px`,
-            lineHeight: `1.3`,
-            fontFamily: `Inter`,
-            color: colors.black,
-            "& ::selection": {
-              background: colors.black,
-              color: colors.white,
-            },
-            "@media screen and (max-width: 900px)": {
-              fontSize: `22px`,
-            },
-          },
-        }}
-      />
-      {children}
-    </>
-  );
-};
+        {children}
+      </>
+    );
+  }
+);
