@@ -9,7 +9,7 @@ export const AllPostList = () => {
       allMdx(sort: { fields: frontmatter___published, order: DESC }) {
         edges {
           post: node {
-            ...PostCard
+            ...PostListPost
           }
         }
       }

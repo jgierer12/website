@@ -1,8 +1,20 @@
 import * as React from "react";
 import Fuse from "fuse.js";
+import { graphql } from "gatsby";
 
 import { PostCard } from "./post-card";
 import { useSearchContext } from "./search-context";
+
+export const postListPostFragment = graphql`
+  fragment PostListPost on Mdx {
+    id
+    frontmatter {
+      title
+      excerpt
+    }
+    ...PostCard
+  }
+`;
 
 export const PostList = ({ posts, ...props }) => {
   const { isSearch, searchQuery } = useSearchContext();
@@ -29,8 +41,8 @@ export const PostList = ({ posts, ...props }) => {
         },
       }}
     >
-      {(isSearch ? filteredPosts : posts).map((post, i) => (
-        <PostCard key={i} data={post} />
+      {(isSearch ? filteredPosts : posts).map(post => (
+        <PostCard key={post.id} data={post} />
       ))}
     </div>
   );
