@@ -16,7 +16,7 @@ export const postCardFragment = graphql`
         source {
           childImageSharp {
             fluid(maxWidth: 800, quality: 95, grayscale: true) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
