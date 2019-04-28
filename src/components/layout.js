@@ -6,7 +6,7 @@ import "destyle.css";
 import * as colors from "../colors";
 import { SEO } from "./seo";
 import { SearchContextProvider } from "./search-context";
-import { inter } from "../fonts/inter";
+import { inter, InterPreload } from "../fonts/inter";
 
 export const Layout = withSlots(
   [`SEO`],
@@ -14,6 +14,7 @@ export const Layout = withSlots(
     return (
       <>
         <SEO {...seoProps} />
+        <InterPreload />
         <Global
           styles={{
             html: {

@@ -2,7 +2,7 @@ import { font } from "./font";
 
 const name = `inter`;
 
-font(name, [
+const { Preload } = font(name, [
   {
     baseName: `Inter-Regular`,
   },
@@ -29,3 +29,4 @@ font(name, [
 ]);
 
 export const inter = `${name}, sans-serif`;
+export const InterPreload = Preload;

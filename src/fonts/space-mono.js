@@ -2,7 +2,7 @@ import { font } from "./font";
 
 const name = `space-mono`;
 
-font(name, [
+const { Preload } = font(name, [
   {
     baseName: `SpaceMono-Regular`,
   },
@@ -21,3 +21,4 @@ font(name, [
 ]);
 
 export const spaceMono = `${name}, monospace`;
+export const SpaceMonoPreload = Preload;

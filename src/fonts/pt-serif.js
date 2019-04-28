@@ -2,7 +2,7 @@ import { font } from "./font";
 
 const name = `pt-serif`;
 
-font(name, [
+const { Preload } = font(name, [
   {
     baseName: `PTSerif-Regular`,
   },
@@ -21,3 +21,4 @@ font(name, [
 ]);
 
 export const ptSerif = `${name}, serif`;
+export const PTSerifPreload = Preload;

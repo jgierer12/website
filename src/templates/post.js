@@ -7,6 +7,7 @@ import { Layout } from "../components/layout";
 import { BlogLayout } from "../components/blog-layout";
 import { baseCss, Heading } from "../components/typography";
 import { spaceMono } from "../fonts/space-mono";
+import { PTSerifPreload } from "../fonts/pt-serif";
 
 export const query = graphql`
   query($id: String) {
@@ -27,6 +28,7 @@ export default ({ data: { mdx } }) => {
   return (
     <Layout>
       <Layout.SEO description={mdx.excerpt} />
+      <PTSerifPreload />
       <BlogLayout>
         <article css={{ ...baseCss, padding: `0 20px` }}>
           <Heading level={1}>{mdx.frontmatter.title}</Heading>
