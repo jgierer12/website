@@ -2,11 +2,10 @@ import * as React from "react";
 import { graphql } from "gatsby";
 import MDXRenderer from "gatsby-mdx/mdx-renderer";
 import { MDXProvider } from "@mdx-js/react";
-import "typeface-space-mono";
-import "typeface-pt-serif";
 
 import { Layout } from "../components/layout";
 import { BlogLayout } from "../components/blog-layout";
+import { baseCss, Heading } from "../components/typography";
 
 export const query = graphql`
   query($id: String) {
@@ -28,12 +27,8 @@ export default ({ data: { mdx } }) => {
     <Layout>
       <Layout.SEO description={mdx.excerpt} />
       <BlogLayout>
-        <article
-          css={{
-            fontFamily: `PT Serif, serif`,
-          }}
-        >
-          <h1>{mdx.frontmatter.title}</h1>
+        <article css={{ ...baseCss, padding: `0 20px` }}>
+          <Heading level={1}>{mdx.frontmatter.title}</Heading>
           <MDXProvider
             components={{
               inlineCode: props => (
