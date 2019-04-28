@@ -6,6 +6,7 @@ import { MDXProvider } from "@mdx-js/react";
 import { Layout } from "../components/layout";
 import { BlogLayout } from "../components/blog-layout";
 import { baseCss, Heading } from "../components/typography";
+import { spaceMono } from "../fonts/space-mono";
 
 export const query = graphql`
   query($id: String) {
@@ -32,10 +33,7 @@ export default ({ data: { mdx } }) => {
           <MDXProvider
             components={{
               inlineCode: props => (
-                <code
-                  {...props}
-                  css={{ fontFamily: `Space Mono, monospace` }}
-                />
+                <code {...props} css={{ fontFamily: spaceMono }} />
               ),
             }}
           >

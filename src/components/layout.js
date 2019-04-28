@@ -2,11 +2,11 @@ import * as React from "react";
 import { Global } from "@emotion/core";
 import { withSlots } from "react-puggy";
 import "destyle.css";
-import "typeface-inter";
 
 import * as colors from "../colors";
 import { SEO } from "./seo";
 import { SearchContextProvider } from "./search-context";
+import { inter } from "../fonts/inter";
 
 export const Layout = withSlots(
   [`SEO`],
@@ -21,7 +21,7 @@ export const Layout = withSlots(
                 height: `100%`,
                 width: `100%`,
               },
-              font: `120%/1.5 Inter, sans-serif`,
+              font: `120%/1.5 ${inter}`,
               color: colors.mono.black,
               "& ::selection": {
                 background: colors.mono.black,

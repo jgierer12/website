@@ -1,12 +1,11 @@
 import * as React from "react";
-import "typeface-space-mono";
-import "typeface-pt-serif";
-import "typeface-inter";
 
 import * as colors from "../colors";
+import { inter } from "../fonts/inter";
+import { ptSerif } from "../fonts/pt-serif";
 
 export const baseCss = {
-  fontFamily: `PT Serif, serif`,
+  fontFamily: ptSerif,
 };
 
 export const Heading = ({ level, ...props }) => {
@@ -26,7 +25,7 @@ export const Heading = ({ level, ...props }) => {
     <H
       {...props}
       css={{
-        fontFamily: `Inter`,
+        fontFamily: inter,
         fontSize,
         fontWeight: `500`,
         color: colors.greens.dark,
