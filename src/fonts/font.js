@@ -7,13 +7,16 @@ export const font = (name, sources) => {
 
   sources.forEach(source => {
     const sourceBaseName = `./files/dist/${name}/${source.baseName}-subset`;
-    if (!source.styles) preloadFile = `${sourceBaseName}.woff2`;
+    const woff2 = require(`${sourceBaseName}.woff2`);
+    const woff = require(`${sourceBaseName}.woff`);
+
+    if (!source.styles) preloadFile = woff2;
 
     injectGlobal`
       @font-face {
         font-family: ${name};
-        src: url("${require(`${sourceBaseName}.woff2`)}") format("woff2"),
-             url("${require(`${sourceBaseName}.woff`)}") format("woff");
+        src: url("${woff2}") format("woff2"),
+             url("${woff}") format("woff");
         font-display: swap;
         ${source.styles || ``}
       }
