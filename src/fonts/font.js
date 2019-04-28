@@ -31,7 +31,7 @@ export const font = (name, sources) => {
           href={preloadFile}
           as="font"
           type="font/woff2"
-          crossOrigin
+          crossOrigin="anonymous"
         />
       </Helmet>
     );
