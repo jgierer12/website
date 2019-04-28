@@ -1,8 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "build": "run-s build:fonts build:site",
-    "build:site": "gatsby build",
+    "build": "gatsby build",
     "build:fonts": "node scripts/build-fonts.js",
     "develop": "gatsby develop",
     "start": "npm run develop",

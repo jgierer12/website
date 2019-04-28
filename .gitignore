@@ -2,4 +2,6 @@ node_modules
 *.log
 public
 .cache
-src/fonts/files/dist
+
+# Commit built font files to git for now
+# src/fonts/files/dist
