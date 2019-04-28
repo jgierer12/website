@@ -31,6 +31,12 @@ export const Layout = withSlots(
                 fontSize: `18px`,
               },
             },
+            "body > noscript": {
+              background: colors.mono.light,
+              display: `block`,
+              textAlign: `center`,
+              padding: `5px`,
+            },
           }}
         />
         <SearchContextProvider>{children}</SearchContextProvider>

@@ -4,7 +4,6 @@ import Helmet from "react-helmet";
 export const SEO = props => {
   return (
     <Helmet>
-      <html lang="en" />
       <title>{props.title || `Jonas Gierer`}</title>
       {props.description && (
         <meta name="description" content={props.description} />
