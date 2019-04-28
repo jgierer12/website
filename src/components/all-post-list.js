@@ -6,7 +6,7 @@ import { PostList } from "../components/post-list";
 export const AllPostList = () => {
   const data = useStaticQuery(graphql`
     query {
-      allMdx {
+      allMdx(sort: { fields: frontmatter___published, order: DESC }) {
         edges {
           post: node {
             ...PostCard
