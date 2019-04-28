@@ -47,7 +47,7 @@ export const NavItemText = props => (
     {...props}
     css={{
       paddingTop: `6px`,
-      fontWeight: `600`,
+      fontWeight: `700`,
       letterSpacing: `2px`,
       textTransform: `uppercase`,
     }}
