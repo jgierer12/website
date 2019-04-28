@@ -26,7 +26,13 @@ export const font = (name, sources) => {
   const Preload = () =>
     preloadFile && (
       <Helmet>
-        <link rel="preload" href={preloadFile} as="font" type="font/woff2" />
+        <link
+          rel="preload"
+          href={preloadFile}
+          as="font"
+          type="font/woff2"
+          crossOrigin
+        />
       </Helmet>
     );
 
