@@ -1,7 +1,6 @@
 import * as React from "react";
-import { graphql, useStaticQuery } from "gatsby";
-import Image from "gatsby-image";
 import { withSlots } from "react-puggy";
+import Icon from "../images/icon.svg";
 
 import { Link } from "./link";
 
@@ -17,35 +16,21 @@ const BlogLink = () => (
   </Link>
 );
 
-const Brand = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      file(relativePath: { eq: "icon.png" }) {
-        childImageSharp {
-          fixed(width: 50, height: 50) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-    }
-  `);
-
-  return (
-    <Link
-      to="/"
-      css={{
-        display: `flex`,
-        alignItems: `center`,
-        "& > * + *": {
-          marginLeft: `10px`,
-        },
-      }}
-    >
-      <Image fixed={data.file.childImageSharp.fixed} />
-      <span css={{ fontWeight: `500` }}>Jonas Gierer</span>
-    </Link>
-  );
-};
+const Brand = () => (
+  <Link
+    to="/"
+    css={{
+      display: `flex`,
+      alignItems: `center`,
+      "& > * + *": {
+        marginLeft: `10px`,
+      },
+    }}
+  >
+    <Icon width="50px" height="50px" />
+    <span css={{ fontWeight: `500` }}>Jonas Gierer</span>
+  </Link>
+);
 
 export const Header = withSlots(
   [`Left`, `Right`],
