@@ -2,6 +2,7 @@ import * as React from "react";
 import { Link } from "./link";
 
 import * as colors from "../colors";
+import { transition } from "../transition";
 
 export const Nav = props => (
   <ul
@@ -22,10 +23,12 @@ const NavItem = props => (
       {...props}
       css={{
         color: colors.greens.light,
-        transition: `color 0.2s ease-in-out`,
+        ...transition(`color`),
+        ...transition.out,
         display: `block`,
         height: `50px`,
         "&:hover": {
+          ...transition.in,
           color: colors.greens.dark,
         },
       }}

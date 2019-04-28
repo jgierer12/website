@@ -5,6 +5,7 @@ import { Link } from "./link";
 
 import { TintedImage } from "./tinted-image";
 import * as colors from "../colors";
+import { transition } from "../transition";
 
 export const postCardFragment = graphql`
   fragment PostCard on Mdx {
@@ -58,8 +59,10 @@ export const PostCard = ({ data }) => {
               ${colors.greens.primary} 100%
             )
           `,
-          transition: `opacity 0.2s ease-in-out`,
+          ...transition(`opacity`),
+          ...transition.out,
           ".post-card:hover &": {
+            ...transition.in,
             opacity: 0.75,
           },
         }}
@@ -78,8 +81,10 @@ export const PostCard = ({ data }) => {
             fontSize: `175%`,
             fontWeight: `500`,
             color: colors.greens.light,
-            transition: `color 0.2s ease-in-out`,
+            ...transition(`color`),
+            ...transition.out,
             ".post-card:hover &": {
+              ...transition.in,
               color: colors.greens.dark,
             },
           }}
