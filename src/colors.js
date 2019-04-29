@@ -1,6 +1,7 @@
 export const mono = {
   black: `#484A47`,
   dark: `#686C66`,
+  medium: `#7F817D`,
   light: `#E5E5E5`,
   white: `#FFF`,
 };
