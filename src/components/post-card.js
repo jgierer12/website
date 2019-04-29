@@ -80,7 +80,7 @@ export const PostCard = ({ data }) => {
           css={{
             fontSize: `175%`,
             fontWeight: `500`,
-            color: colors.greens.light,
+            color: colors.greens.medium,
             ...transition(`color`),
             ...transition.out,
             ".post-card:hover &": {

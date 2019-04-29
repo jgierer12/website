@@ -22,7 +22,7 @@ const NavItem = props => (
     <Link
       {...props}
       css={{
-        color: colors.greens.light,
+        color: colors.greens.medium,
         ...transition(`color`),
         ...transition.out,
         display: `block`,
