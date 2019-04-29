@@ -16,7 +16,11 @@ const SearchButton = () => {
   const Icon = isSearch ? XIcon : SearchIcon;
 
   return (
-    <HeaderLink as={`button`} onClick={toggleSearch}>
+    <HeaderLink
+      as={`button`}
+      aria-label={isSearch ? `Cancel search` : `Search`}
+      onClick={toggleSearch}
+    >
       <Icon role="img" fill="currentColor" css={{ display: `block` }} />
     </HeaderLink>
   );
@@ -42,6 +46,7 @@ const SearchInput = () => {
 
   return (
     <input
+      aria-label="Search"
       autoFocus
       type="text"
       value={searchQuery}
