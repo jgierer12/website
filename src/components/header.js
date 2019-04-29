@@ -3,9 +3,26 @@ import { withSlots } from "react-puggy";
 import Icon from "../images/icon.svg";
 
 import { Link } from "./link";
+import * as colors from "../colors";
+import { transition } from "../transition";
+
+export const HeaderLink = ({ as: Component = Link, ...props }) => (
+  <Component
+    {...props}
+    css={{
+      ...transition(`color`),
+      ...transition.out,
+      color: colors.mono.medium,
+      "&:hover": {
+        ...transition.in,
+        color: colors.mono.black,
+      },
+    }}
+  />
+);
 
 const BlogLink = () => (
-  <Link
+  <HeaderLink
     to="/blog"
     css={{
       textTransform: `uppercase`,
@@ -13,11 +30,11 @@ const BlogLink = () => (
     }}
   >
     Blog
-  </Link>
+  </HeaderLink>
 );
 
 const Brand = () => (
-  <Link
+  <HeaderLink
     to="/"
     css={{
       display: `flex`,
@@ -29,7 +46,7 @@ const Brand = () => (
   >
     <Icon width="50px" height="50px" />
     <span css={{ fontWeight: `500` }}>Jonas Gierer</span>
-  </Link>
+  </HeaderLink>
 );
 
 export const Header = withSlots(

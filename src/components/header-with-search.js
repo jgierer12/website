@@ -4,7 +4,7 @@ import XIcon from "boxicons/svg/regular/bx-x.svg";
 
 import * as colors from "../colors";
 import { useSearchContext } from "./search-context";
-import { Header } from "./header";
+import { Header, HeaderLink } from "./header";
 
 const SearchButton = () => {
   const { isSearch, setIsSearch } = useSearchContext();
@@ -16,9 +16,9 @@ const SearchButton = () => {
   const Icon = isSearch ? XIcon : SearchIcon;
 
   return (
-    <button onClick={toggleSearch}>
+    <HeaderLink as={`button`} onClick={toggleSearch}>
       <Icon role="img" fill="currentColor" css={{ display: `block` }} />
-    </button>
+    </HeaderLink>
   );
 };
 
