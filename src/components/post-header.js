@@ -34,6 +34,8 @@ export const PostHeader = ({ mdx }) => (
         padding: `20px`,
         background: colors.mono.white,
         textAlign: `center`,
+        borderTopLeftRadius: `4px`,
+        borderTopRightRadius: `4px`,
       }}
     >
       <Heading level={1}>{mdx.frontmatter.title}</Heading>
@@ -41,18 +43,21 @@ export const PostHeader = ({ mdx }) => (
         css={{
           color: colors.mono.medium,
           marginTop: `20px`,
-          "& > *": {
+          em: {
+            fontStyle: `normal`,
             color: colors.mono.black,
           },
         }}
       >
         Published on{` `}
-        <time dateTime={mdx.frontmatter.published}>
-          {formatDate(mdx.frontmatter.published, `MMMM D, YYYY`)}
-        </time>
+        <em>
+          <time dateTime={mdx.frontmatter.published}>
+            {formatDate(mdx.frontmatter.published, `MMMM D, YYYY`)}
+          </time>
+        </em>
         {` `}
         by{` `}
-        <span>Jonas Gierer</span>
+        <em>Jonas Gierer</em>
       </div>
     </div>
   </>
