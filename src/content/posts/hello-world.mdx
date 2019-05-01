@@ -1,5 +1,6 @@
 ---
-title: Hello World
+title: How to use React Context effectively
+author: Kent C. Dodds
 published: 2019-04-27
 image:
   source: ../../images/hello-world.jpg
@@ -10,9 +11,131 @@ image:
     source:
       name: Unsplash
       url: https://unsplash.com/photos/Q1p7bh3SHj8
-excerpt:
-  This is the excerpt. Seeing if multiple lines work too. Asdf Basdfasdf asdf
-  bla bla bla blub hope this is more than 80 chars now
+excerpt: How to create and expose React Context providers and consumers
 ---
 
-`gatsby-mdx` is working!
+In
+[Application State Management with React](https://kentcdodds.com/blog/application-state-management-with-react),
+I talk about how using a mix of local state and React Context can help you
+manage state well in any React application. I showed some examples and I want to
+call out a few things about those examples and how you can create React context
+consumers effectively so you avoid some problems and improve the developer
+experience and maintainability of the context objects you create for your
+application and/or libraries.
+
+> Note, please do read
+> [Application State Management with React](https://kentcdodds.com/blog/application-state-management-with-react)
+> and follow the advice that you shouldn't be reaching for context to solve
+> every state sharing problem that crosses your desk. But when you do need to
+> reach for context, hopefully this blog post will help you know how to do so
+> effectively. Also, remember that context does NOT have to be global to the
+> whole app, but can be applied to one part of your tree and you can (and
+> probably should) have multiple logically separated contexts in your app.
+
+First, let's create a file at `src/count-context.js` and we'll create our
+context there:
+
+```js
+// src/count-context.js
+import React from "react";
+
+const CountContext = React.createContext();
+```
+
+First off, I don't have an initial value for the `CountContext`. If I wanted an
+initial value, I would call `React.createContext({count: 0})`. But I don't
+include a default value and that's intentional. The `defaultValue` is only
+useful in a situation like this:
+
+```js
+function CountDisplay() {
+  const { count } = React.useContext(CountContext);
+
+  return <div>{count}</div>;
+}
+
+ReactDOM.render(<CountDisplay />, document.getElementById("⚛️"));
+```
+
+Because we don't have a default value for our `CountContext`, we'll get an error
+on the highlighted line where we're destructing the return value of
+`useContext`. This is because our default value is `undefined` and you cannot
+destructure `undefined`.
+
+## The Custom Provider Component
+
+None of us likes runtime errors, so your knee-jerk reaction may be to add a
+default value to avoid the runtime error. However, what use would the context be
+if it didn't have an actual value? If it's just using the default value that's
+been provided, then it can't really do much good. 99% of the time that you're
+going to be creating and using context in your application, you want your
+context consumers (those using useContext) to be rendered within a provider
+which can provide a useful value.
+
+> Note, there are situations where default values are useful, but most of the
+> time they're not necessary or useful.
+
+The React docs suggest that providing a default value "can be helpful in testing
+components in isolation without wrapping them." While it's true that it allows
+you to do this, I disagree that it's better than wrapping your components with
+the necessary context. Remember that every time you do something in your test
+that you don't do in your application, you reducing the amount of confidence
+that test can give you. There are reasons to do this, but that's not one of
+them.
+
+> Note: If you're using Flow or TypeScript, not providing a default value can be
+> really annoying for people who are using React.useContext, but I'll show you
+> how to avoid that problem altogether below. Keep reading!
+
+Ok, let's continue. For this context module to be useful at all we need to use
+the Provider and expose a component that provides a value. Our component will be
+used like this:
+
+```js
+function App() {
+  return (
+    <CountProvider>
+      <CountDisplay />
+      <Counter />
+    </CountProvider>
+  );
+}
+
+ReactDOM.render(<App />, document.getElementById("⚛️"));
+```
+
+So let's make a component that can be used like that:
+
+```js filename=src/count-context.js
+import React from "react";
+
+const CountContext = React.createContext();
+
+function CountProvider(props) {
+  const [count, setCount] = React.useState(0);
+  const value = React.useMemo(() => {
+    return {
+      count,
+      setCount,
+    };
+  }, [count]);
+
+  return <CountContext.Provider value={value} {...props} />;
+}
+
+export { CountProvider };
+```
+
+Ok, so there are a few things to talk about here. Let's go over them one by one:
+
+React.useState: Your context provider can provide anything you want. This
+provider could use dozens of hooks if it needed to. This is just a small
+contrived example.
+
+React.useMemo: 99% of the time, your context providers should probably be using
+useMemo. I'm not going to go too far into this one (I'll leave that to my
+friends here), but just know that context providers do an equality check on the
+value you provide and if it's different between renders it will re-render every
+consumer (this can be a big performance problem if your context has many
+consumers). So we're using useMemo here to avoid our context value being
+re-created on every re-render.
