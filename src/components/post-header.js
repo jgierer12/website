@@ -57,7 +57,7 @@ export const PostHeader = ({ mdx }) => (
         </em>
         {` `}
         by{` `}
-        <em>Jonas Gierer</em>
+        <em>{mdx.frontmatter.author || `Jonas Gierer`}</em>
       </div>
     </div>
   </>
