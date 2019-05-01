@@ -6,6 +6,11 @@ import { ptSerif } from "../fonts/pt-serif";
 
 export const baseCss = {
   fontFamily: ptSerif,
+  wordWrap: `break-word`,
+  hyphens: `auto`,
+  "& > * + *": {
+    marginTop: `10px`,
+  },
 };
 
 export const Heading = ({ level, ...props }) => {
