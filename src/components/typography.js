@@ -17,7 +17,7 @@ export const Heading = ({ level, ...props }) => {
 
   // prettier-ignore
   const fontSize = React.useMemo(
-    () => [`200%`, `150%`, `125%`][level - 1],
+    () => [`250%`, `200%`, `150%`][level - 1],
     [level]
   );
 
@@ -27,6 +27,7 @@ export const Heading = ({ level, ...props }) => {
       css={{
         fontFamily: inter,
         fontSize,
+        lineHeight: `1.2`,
         fontWeight: `500`,
       }}
     />
