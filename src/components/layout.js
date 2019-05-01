@@ -2,6 +2,7 @@ import * as React from "react";
 import { Global } from "@emotion/core";
 import { withSlots } from "react-puggy";
 import "destyle.css";
+import "focus-visible";
 
 import * as colors from "../colors";
 import { SEO } from "./seo";
@@ -37,6 +38,9 @@ export const Layout = withSlots(
               display: `block`,
               textAlign: `center`,
               padding: `5px`,
+            },
+            ".js-focus-visible :focus:not(.focus-visible)": {
+              outline: `none`,
             },
           }}
         />
