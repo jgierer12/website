@@ -9,7 +9,6 @@ export const BlogLayout = ({ children, header: Header = DefaultHeader }) => {
         css={{
           display: `grid`,
           gridTemplateColumns: `1fr 800px 1fr`,
-          gridTemplateRows: `auto 1fr`,
         }}
       >
         <Header
@@ -18,15 +17,7 @@ export const BlogLayout = ({ children, header: Header = DefaultHeader }) => {
             gridRow: `1`,
           }}
         />
-        <div
-          css={{
-            gridColumn: `2`,
-            gridRow: `2`,
-            paddingBottom: `20px`,
-          }}
-        >
-          {children}
-        </div>
+        {children}
       </div>
     </>
   );

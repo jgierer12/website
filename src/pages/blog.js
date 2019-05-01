@@ -21,7 +21,15 @@ export default () => {
       <Layout pageType="blog">
         <Layout.SEO title="Jonas Gierer's Blog" />
         <BlogLayout header={HeaderWithSearch}>
-          <AllPostList />
+          <div
+            css={{
+              gridColumn: `2`,
+              gridRow: `4`,
+              paddingBottom: `20px`,
+            }}
+          >
+            <AllPostList />
+          </div>
         </BlogLayout>
       </Layout>
     </>
