@@ -38,7 +38,9 @@ export const PostHeader = ({ mdx }) => (
         borderTopRightRadius: `4px`,
       }}
     >
-      <Heading level={1}>{mdx.frontmatter.title}</Heading>
+      <Heading level={1} css={{ margin: `0px` }}>
+        {mdx.frontmatter.title}
+      </Heading>
       <div
         css={{
           color: colors.mono.medium,

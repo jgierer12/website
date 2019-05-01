@@ -5,7 +5,7 @@ import { MDXProvider } from "@mdx-js/react";
 
 import { Layout } from "../components/layout";
 import { BlogLayout } from "../components/blog-layout";
-import * as typography from "../components/typography";
+import * as Typography from "../components/typography";
 import { Code } from "../components/code";
 import { PTSerifPreload } from "../fonts/pt-serif";
 import { PostHeader } from "../components/post-header";
@@ -17,6 +17,7 @@ export const query = graphql`
       frontmatter {
         title
         published
+        author
         image {
           source {
             childImageSharp {
@@ -58,7 +59,7 @@ export default ({ data: { mdx } }) => {
         <PostHeader mdx={mdx} />
         <article
           css={{
-            ...typography.baseCss,
+            ...Typography.baseCss,
             gridColumn: `2`,
             gridRow: `4`,
             padding: `20px`,
@@ -66,9 +67,13 @@ export default ({ data: { mdx } }) => {
         >
           <MDXProvider
             components={{
-              a: typography.Link,
+              a: Typography.Link,
               inlineCode: Code,
               pre: MdxCode,
+              blockquote: Typography.Quote,
+              h1: props => <Typography.Heading level={1} {...props} />,
+              h2: props => <Typography.Heading level={2} {...props} />,
+              h3: props => <Typography.Heading level={3} {...props} />,
             }}
           >
             <MDXRenderer>{mdx.code.body}</MDXRenderer>

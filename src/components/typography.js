@@ -36,6 +36,7 @@ export const Heading = ({ level, ...props }) => {
         fontSize,
         lineHeight: `1.2`,
         fontWeight: `500`,
+        marginTop: `20px`,
       }}
     />
   );
@@ -53,6 +54,19 @@ export const Link = props => (
         ...transition.in,
         textDecorationColor: colors.greens.medium,
       },
+    }}
+  />
+);
+
+export const Quote = props => (
+  <blockquote
+    {...props}
+    css={{
+      color: colors.mono.dark,
+      marginLeft: `-20px`,
+      paddingLeft: `15px`,
+      borderLeft: `5px solid ${colors.greens.light}`,
+      fontStyle: `italic`,
     }}
   />
 );
