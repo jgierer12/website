@@ -1,7 +1,6 @@
 import * as React from "react";
 import { graphql } from "gatsby";
 import { Link } from "./link";
-// import { format as formatDate } from "date-fns";
 
 import { TintedImage } from "./tinted-image";
 import * as colors from "../colors";
@@ -91,11 +90,6 @@ export const PostCard = ({ data }) => {
         >
           {data.frontmatter.title}
         </h2>
-        {/* <div>
-          <time dateTime={data.frontmatter.published}>
-            {formatDate(data.frontmatter.published, `MMMM D, YYYY`)}
-          </time>
-        </div> */}
         <p>{data.frontmatter.excerpt}</p>
       </div>
     </Link>
