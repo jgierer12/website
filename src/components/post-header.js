@@ -9,11 +9,13 @@ export const PostHeader = ({ mdx }) => (
   <>
     <TintedImage
       fluid={mdx.frontmatter.image.source.childImageSharp.fluid}
-      critical
       css={{
         gridColumn: `1 / 4`,
         gridRow: `2 / 4`,
         zIndex: `-10`,
+        "*::selection": {
+          background: `none`,
+        },
       }}
       tintCss={{
         mixBlendMode: `overlay`,
