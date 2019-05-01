@@ -17,7 +17,7 @@ export const Heading = ({ level, ...props }) => {
 
   // prettier-ignore
   const fontSize = React.useMemo(
-    () => [`300%`, `200%`, `150%`][level - 1],
+    () => [`200%`, `150%`, `125%`][level - 1],
     [level]
   );
 
@@ -28,7 +28,6 @@ export const Heading = ({ level, ...props }) => {
         fontFamily: inter,
         fontSize,
         fontWeight: `500`,
-        color: colors.greens.dark,
       }}
     />
   );
