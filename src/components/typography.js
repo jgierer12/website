@@ -9,7 +9,6 @@ import { transition } from "../transition";
 export const baseCss = {
   fontFamily: ptSerif,
   wordWrap: `break-word`,
-  hyphens: `auto`,
   "& > * + *": {
     marginTop: `10px`,
   },
