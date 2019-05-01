@@ -15,7 +15,7 @@ export const HeaderLink = ({ as: Component = Link, ...props }) => (
       color: colors.mono.medium,
       "&:hover": {
         ...transition.in,
-        color: colors.mono.black,
+        color: colors.mono.text,
       },
     }}
   />

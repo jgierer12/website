@@ -5,8 +5,8 @@ import { MDXProvider } from "@mdx-js/react";
 
 import { Layout } from "../components/layout";
 import { BlogLayout } from "../components/blog-layout";
-import { baseCss } from "../components/typography";
-import { spaceMono } from "../fonts/space-mono";
+import * as typography from "../components/typography";
+import { Code } from "../components/code";
 import { PTSerifPreload } from "../fonts/pt-serif";
 import { PostHeader } from "../components/post-header";
 
@@ -40,6 +40,15 @@ export const query = graphql`
   }
 `;
 
+const MdxCode = ({
+  children: {
+    props: { className, ...props },
+  },
+}) => {
+  const language = className && className.split(`-`)[1];
+  return <Code {...props} language={language} is="block" />;
+};
+
 export default ({ data: { mdx } }) => {
   return (
     <Layout>
@@ -49,7 +58,7 @@ export default ({ data: { mdx } }) => {
         <PostHeader mdx={mdx} />
         <article
           css={{
-            ...baseCss,
+            ...typography.baseCss,
             gridColumn: `2`,
             gridRow: `4`,
             padding: `20px`,
@@ -57,9 +66,9 @@ export default ({ data: { mdx } }) => {
         >
           <MDXProvider
             components={{
-              inlineCode: props => (
-                <code {...props} css={{ fontFamily: spaceMono }} />
-              ),
+              a: typography.Link,
+              inlineCode: Code,
+              pre: MdxCode,
             }}
           >
             <MDXRenderer>{mdx.code.body}</MDXRenderer>

@@ -3,6 +3,8 @@ import * as React from "react";
 import * as colors from "../colors";
 import { inter } from "../fonts/inter";
 import { ptSerif } from "../fonts/pt-serif";
+import { Link as DefaultLink } from "./link";
+import { transition } from "../transition";
 
 export const baseCss = {
   fontFamily: ptSerif,
@@ -38,3 +40,19 @@ export const Heading = ({ level, ...props }) => {
     />
   );
 };
+
+export const Link = props => (
+  <DefaultLink
+    {...props}
+    css={{
+      color: colors.greens.medium,
+      textDecoration: `underline transparent`,
+      ...transition(`text-decoration-color`),
+      ...transition.out,
+      "&:hover": {
+        ...transition.in,
+        textDecorationColor: colors.greens.medium,
+      },
+    }}
+  />
+);
