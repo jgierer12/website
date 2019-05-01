@@ -45,7 +45,7 @@ export const PostHeader = ({ mdx }) => (
           marginTop: `20px`,
           em: {
             fontStyle: `normal`,
-            color: colors.mono.black,
+            color: colors.mono.text,
           },
         }}
       >

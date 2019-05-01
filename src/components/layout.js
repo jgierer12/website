@@ -24,9 +24,9 @@ export const Layout = withSlots(
                 width: `100%`,
               },
               font: `120%/1.5 ${inter}`,
-              color: colors.mono.black,
+              color: colors.mono.text,
               "& ::selection": {
-                background: colors.mono.black,
+                background: colors.mono.text,
                 color: colors.mono.white,
               },
               "@media screen and (max-width: 900px)": {
