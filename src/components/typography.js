@@ -36,7 +36,7 @@ export const Heading = ({ level, ...props }) => {
         fontSize,
         lineHeight: `1.2`,
         fontWeight: `500`,
-        marginTop: `20px`,
+        marginTop: `40px`,
       }}
     />
   );
@@ -63,7 +63,7 @@ export const Quote = props => (
     {...props}
     css={{
       color: colors.mono.dark,
-      marginLeft: `-20px`,
+      // marginLeft: `-20px`,
       paddingLeft: `15px`,
       borderLeft: `5px solid ${colors.greens.light}`,
       fontStyle: `italic`,

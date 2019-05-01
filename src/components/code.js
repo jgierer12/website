@@ -48,10 +48,11 @@ export const theme = [
   },
 ];
 
-const InlineCodeContent = () => ({ tokens, getTokenProps }) => {
+const InlineCodeContent = props => ({ tokens, getTokenProps }) => {
   const line = tokens[0];
   return (
     <code
+      {...props}
       css={{
         fontFamily: dankMono,
         background: colors.mono.light,
@@ -67,18 +68,20 @@ const InlineCodeContent = () => ({ tokens, getTokenProps }) => {
   );
 };
 
-const BlockCodeContent = ({ filename }) => ({
+const BlockCodeContent = ({ filename, ...props }) => ({
   tokens,
   getLineProps,
   getTokenProps,
 }) => (
   <pre
+    {...props}
     css={{
       fontFamily: dankMono,
       borderRadius: `4px`,
       margin: `0 -20px`,
       marginTop: `10px`,
       overflow: `hidden`,
+      lineHeight: `1.5`,
     }}
   >
     {filename && (

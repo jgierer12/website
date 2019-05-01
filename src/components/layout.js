@@ -23,7 +23,7 @@ export const Layout = withSlots(
                 height: `100%`,
                 width: `100%`,
               },
-              font: `120%/1.5 ${inter}`,
+              font: `120%/1.65 ${inter}`,
               color: colors.mono.text,
               "& ::selection": {
                 background: colors.mono.text,

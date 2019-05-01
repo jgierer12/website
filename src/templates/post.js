@@ -47,7 +47,14 @@ const MdxCode = ({
   },
 }) => {
   const language = className && className.split(`-`)[1];
-  return <Code {...props} language={language} is="block" />;
+  return (
+    <Code
+      {...props}
+      language={language}
+      is="block"
+      css={{ margin: `20px -20px` }}
+    />
+  );
 };
 
 export default ({ data: { mdx } }) => {

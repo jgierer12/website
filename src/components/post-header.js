@@ -44,7 +44,7 @@ export const PostHeader = ({ mdx }) => (
       <div
         css={{
           color: colors.mono.medium,
-          marginTop: `20px`,
+          marginTop: `10px`,
           em: {
             fontStyle: `normal`,
             color: colors.mono.text,
