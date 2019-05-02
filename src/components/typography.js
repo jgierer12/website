@@ -1,10 +1,10 @@
 import * as React from "react";
 
-import * as colors from "../colors";
-import { inter } from "../fonts/inter";
-import { ptSerif } from "../fonts/pt-serif";
-import { Link as DefaultLink } from "./link";
-import { transition } from "../transition";
+import * as colors from "~/colors";
+import { inter } from "~/fonts/inter";
+import { ptSerif } from "~/fonts/pt-serif";
+import { Link as DefaultLink } from "~/components/link";
+import { transition } from "~/transition";
 
 export const baseCss = {
   fontFamily: ptSerif,

@@ -1,4 +1,4 @@
-import { font } from "./font";
+import { font } from "~/fonts/font";
 
 const name = `inter`;
 

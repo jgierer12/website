@@ -4,10 +4,10 @@ import TwitterIcon from "boxicons/svg/logos/bxl-twitter.svg";
 import GitHubIcon from "boxicons/svg/logos/bxl-github.svg";
 import EmailIcon from "boxicons/svg/solid/bxs-envelope.svg";
 
-import * as colors from "../colors";
-import { Layout } from "../components/layout";
-import { Nav, NavItemIcon, NavItemText } from "../components/index-nav";
-import { TintedImage } from "../components/tinted-image";
+import * as colors from "~/colors";
+import { Layout } from "~/components/layout";
+import { Nav, NavItemIcon, NavItemText } from "~/components/index-nav";
+import { TintedImage } from "~/components/tinted-image";
 
 export const query = graphql`
   query {

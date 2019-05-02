@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { Header as DefaultHeader } from "./header";
+import { Header as DefaultHeader } from "~/components/header";
 
 export const BlogLayout = ({ children, header: Header = DefaultHeader }) => {
   return (

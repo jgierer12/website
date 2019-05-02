@@ -1,10 +1,10 @@
 import * as React from "react";
 import { graphql } from "gatsby";
-import { Link } from "./link";
 
-import { TintedImage } from "./tinted-image";
-import * as colors from "../colors";
-import { transition } from "../transition";
+import { Link } from "~/components/link";
+import { TintedImage } from "~/components/tinted-image";
+import * as colors from "~/colors";
+import { transition } from "~/transition";
 
 export const postCardFragment = graphql`
   fragment PostCard on Mdx {

@@ -1,8 +1,8 @@
 import * as React from "react";
-import { Link } from "./link";
 
-import * as colors from "../colors";
-import { transition } from "../transition";
+import { Link } from "~/components/link";
+import * as colors from "~/colors";
+import { transition } from "~/transition";
 
 export const Nav = props => (
   <ul

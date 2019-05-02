@@ -1,7 +1,7 @@
 import * as React from "react";
 
-import { dankMono } from "../../fonts/dank-mono";
-import * as colors from "../../colors";
+import { dankMono } from "~/fonts/dank-mono";
+import * as colors from "~/colors";
 
 export const CodeInline = props => ({ tokens, getTokenProps }) => {
   const line = tokens[0];

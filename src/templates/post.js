@@ -3,12 +3,12 @@ import { graphql } from "gatsby";
 import MDXRenderer from "gatsby-mdx/mdx-renderer";
 import { MDXProvider } from "@mdx-js/react";
 
-import { Layout } from "../components/layout";
-import { BlogLayout } from "../components/blog-layout";
-import * as Typography from "../components/typography";
-import { Code } from "../components/code";
-import { PTSerifPreload } from "../fonts/pt-serif";
-import { PostHeader } from "../components/post-header";
+import { Layout } from "~/components/layout";
+import { BlogLayout } from "~/components/blog-layout";
+import * as Typography from "~/components/typography";
+import { Code } from "~/components/code";
+import { PTSerifPreload } from "~/fonts/pt-serif";
+import { PostHeader } from "~/components/post-header";
 
 export const query = graphql`
   query($id: String) {

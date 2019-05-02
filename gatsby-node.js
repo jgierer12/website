@@ -1,6 +1,16 @@
 const { createFilePath } = require(`gatsby-source-filesystem`);
 const path = require(`path`);
 
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        "~": path.resolve(__dirname, `src`),
+      },
+    },
+  });
+};
+
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
   if (node.internal.type === `Mdx`) {

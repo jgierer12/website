@@ -2,9 +2,9 @@ import * as React from "react";
 import SearchIcon from "boxicons/svg/regular/bx-search.svg";
 import XIcon from "boxicons/svg/regular/bx-x.svg";
 
-import * as colors from "../colors";
-import { useSearchContext } from "./search-context";
-import { Header, HeaderLink } from "./header";
+import * as colors from "~/colors";
+import { useSearchContext } from "~/components/search-context";
+import { Header, HeaderLink } from "~/components/header";
 
 const SearchButton = () => {
   const { isSearch, setIsSearch } = useSearchContext();

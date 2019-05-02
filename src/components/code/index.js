@@ -1,9 +1,9 @@
 import * as React from "react";
 import Highlight, { defaultProps } from "prism-react-renderer";
 
-import * as colors from "../../colors";
-import { CodeBlock } from "./code-block";
-import { CodeInline } from "./code-inline";
+import * as colors from "~/colors";
+import { CodeBlock } from "~/components/code/code-block";
+import { CodeInline } from "~/components/code/code-inline";
 
 export const theme = [
   {

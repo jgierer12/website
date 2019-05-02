@@ -1,10 +1,10 @@
 import * as React from "react";
 import { withSlots } from "react-puggy";
-import Icon from "../images/icon.svg";
 
-import { Link } from "./link";
-import * as colors from "../colors";
-import { transition } from "../transition";
+import Icon from "~/images/icon.svg";
+import { Link } from "~/components/link";
+import * as colors from "~/colors";
+import { transition } from "~/transition";
 
 export const HeaderLink = ({ as: Component = Link, ...props }) => (
   <Component

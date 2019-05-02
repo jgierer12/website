@@ -1,10 +1,10 @@
 import * as React from "react";
 import { Global } from "@emotion/core";
 
-import { Layout } from "../components/layout";
-import { AllPostList } from "../components/all-post-list";
-import { BlogLayout } from "../components/blog-layout";
-import { HeaderWithSearch } from "../components/header-with-search";
+import { Layout } from "~/components/layout";
+import { AllPostList } from "~/components/all-post-list";
+import { BlogLayout } from "~/components/blog-layout";
+import { HeaderWithSearch } from "~/components/header-with-search";
 
 export default () => {
   return (

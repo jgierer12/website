@@ -1,9 +1,9 @@
 import * as React from "react";
 import { format as formatDate } from "date-fns";
 
-import * as colors from "../colors";
-import { TintedImage } from "./tinted-image";
-import { Heading } from "./typography";
+import * as colors from "~/colors";
+import { TintedImage } from "~/components/tinted-image";
+import { Heading } from "~/components/typography";
 
 export const PostHeader = ({ mdx }) => (
   <>

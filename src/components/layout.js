@@ -4,10 +4,10 @@ import { withSlots } from "react-puggy";
 import "destyle.css";
 import "focus-visible";
 
-import * as colors from "../colors";
-import { SEO } from "./seo";
-import { SearchContextProvider } from "./search-context";
-import { inter, InterPreload } from "../fonts/inter";
+import * as colors from "~/colors";
+import { SEO } from "~/components/seo";
+import { SearchContextProvider } from "~/components/search-context";
+import { inter, InterPreload } from "~/fonts/inter";
 
 export const Layout = withSlots(
   [`SEO`],

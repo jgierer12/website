@@ -2,8 +2,8 @@ import * as React from "react";
 import Fuse from "fuse.js";
 import { graphql } from "gatsby";
 
-import { PostCard } from "./post-card";
-import { useSearchContext } from "./search-context";
+import { PostCard } from "~/components/post-card";
+import { useSearchContext } from "~/components/search-context";
 
 export const postListPostFragment = graphql`
   fragment PostListPost on Mdx {
