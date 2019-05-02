@@ -45,14 +45,16 @@ export const Link = props => (
   <DefaultLink
     {...props}
     css={{
-      color: colors.greens.medium,
-      textDecorationLine: `underline`,
-      textDecorationColor: colors.mono.light,
-      ...transition(`text-decoration-color`),
+      background: colors.mono.light,
+      padding: `2px 6px`,
+      borderRadius: `4px`,
+      fontFamily: inter,
+      ...transition(`background, color`),
       ...transition.out,
       "&:hover": {
         ...transition.in,
-        textDecorationColor: colors.greens.light,
+        background: `#CFDCC4`,
+        color: colors.mono.black,
       },
     }}
   />
