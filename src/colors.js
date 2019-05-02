@@ -12,3 +12,11 @@ export const greens = {
   medium: `#85927A`,
   dark: `#647753`,
 };
+
+export const languages = {
+  js: `#f1e05a`,
+  html: `#e34c26`,
+  css: `#563d7c`,
+  sh: `#89e051`,
+  fish: `#89e051`,
+};

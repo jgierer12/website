@@ -3,6 +3,7 @@ import Highlight, { defaultProps } from "prism-react-renderer";
 
 import * as colors from "../colors";
 import { dankMono } from "../fonts/dank-mono";
+import { inter } from "../fonts/inter";
 
 export const theme = [
   {
@@ -68,7 +69,7 @@ const InlineCodeContent = props => ({ tokens, getTokenProps }) => {
   );
 };
 
-const BlockCodeContent = ({ filename, ...props }) => ({
+const BlockCodeContent = ({ filename, language, ...props }) => ({
   tokens,
   getLineProps,
   getTokenProps,
@@ -84,7 +85,7 @@ const BlockCodeContent = ({ filename, ...props }) => ({
       lineHeight: `1.5`,
     }}
   >
-    {filename && (
+    {(filename || language) && (
       <div
         css={{
           padding: `10px 20px`,
@@ -92,7 +93,19 @@ const BlockCodeContent = ({ filename, ...props }) => ({
           color: colors.mono.white,
         }}
       >
-        {filename}
+        <span
+          css={{
+            marginRight: `10px`,
+            fontFamily: inter,
+            textTransform: `uppercase`,
+            fontSize: `75%`,
+            fontWeight: `500`,
+            color: colors.languages[language] || colors.mono.white,
+          }}
+        >
+          {language}
+        </span>
+        <span>{filename}</span>
       </div>
     )}
     <code
@@ -127,6 +140,9 @@ export const Code = ({ children, is, language, ...props }) => (
     code={children.trim()}
     theme={{ styles: theme }}
   >
-    {(is === `block` ? BlockCodeContent : InlineCodeContent)(props)}
+    {(is === `block` ? BlockCodeContent : InlineCodeContent)({
+      language,
+      ...props,
+    })}
   </Highlight>
 );
