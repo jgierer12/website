@@ -103,6 +103,10 @@ const BlockCodeContent = ({ filename, ...props }) => ({
         overflow: `auto`,
         background: colors.mono.black,
         color: colors.mono.light,
+        "& ::selection": {
+          background: colors.mono.light,
+          color: colors.mono.text,
+        },
       }}
     >
       {tokens.map((line, i) => (

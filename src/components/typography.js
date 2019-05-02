@@ -46,12 +46,13 @@ export const Link = props => (
     {...props}
     css={{
       color: colors.greens.medium,
-      textDecoration: `underline transparent`,
+      textDecorationLine: `underline`,
+      textDecorationColor: colors.mono.light,
       ...transition(`text-decoration-color`),
       ...transition.out,
       "&:hover": {
         ...transition.in,
-        textDecorationColor: colors.greens.medium,
+        textDecorationColor: colors.greens.light,
       },
     }}
   />
