@@ -55,6 +55,9 @@ module.exports = {
     },
     {
       resolve: `gatsby-mdx`,
+      options: {
+        gatsbyRemarkPlugins: [`gatsby-remark-smartypants`],
+      },
     },
 
     // Deploy
