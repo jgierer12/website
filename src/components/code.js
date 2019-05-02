@@ -83,6 +83,10 @@ const BlockCodeContent = ({ filename, language, ...props }) => ({
       marginTop: `10px`,
       overflow: `hidden`,
       lineHeight: `1.5`,
+      "& ::selection": {
+        background: colors.mono.light,
+        color: colors.mono.text,
+      },
     }}
   >
     {(filename || language) && (
@@ -116,10 +120,6 @@ const BlockCodeContent = ({ filename, language, ...props }) => ({
         overflow: `auto`,
         background: colors.mono.black,
         color: colors.mono.light,
-        "& ::selection": {
-          background: colors.mono.light,
-          color: colors.mono.text,
-        },
       }}
     >
       {tokens.map((line, i) => (
