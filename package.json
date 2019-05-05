@@ -4,18 +4,12 @@
     "build": "gatsby build",
     "build:fonts": "node scripts/build-fonts.js",
     "develop": "gatsby develop",
-    "start": "npm run develop",
     "preserve": "run-s build",
     "serve": "gatsby serve",
     "test": "run-s lint",
-    "format": "run-p --print-label format:*",
-    "format:js": "run-s \"_eslint -- --fix\"",
-    "format:other": "run-s \"_prettier -- --write\"",
     "lint": "run-p --print-label --continue-on-error lint:*",
-    "lint:js": "run-s _eslint",
-    "lint:other": "run-s _prettier",
-    "_eslint": "eslint --color --ignore-path .gitignore \"**/*.js\"",
-    "_prettier": "prettier --check --ignore-path .gitignore \"**/*.{json,md,mdx,yml,graphql}\""
+    "lint:js": "eslint --color --ignore-path .gitignore '**/*.js'",
+    "lint:other": "prettier --check --ignore-path .gitignore '**/*.{json,md,mdx,yml,graphql}'"
   },
   "dependencies": {
     "@emotion/core": "^10.0.10",
