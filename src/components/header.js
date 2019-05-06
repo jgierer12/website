@@ -5,6 +5,7 @@ import Icon from "~/images/icon.svg";
 import { Link } from "~/components/link";
 import * as colors from "~/colors";
 import { transition } from "~/transition";
+import * as media from "~/media";
 
 export const HeaderLink = ({ as: Component = Link, ...props }) => (
   <Component
@@ -62,6 +63,10 @@ export const Header = withSlots(
         alignItems: `center`,
         "& > * + *": {
           marginLeft: `20px`,
+        },
+        [media.mobile.below]: {
+          height: `70px`,
+          padding: `20px 10px`,
         },
       }}
     >

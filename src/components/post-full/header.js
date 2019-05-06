@@ -5,6 +5,7 @@ import { graphql } from "gatsby";
 import * as colors from "~/colors";
 import { TintedImage } from "~/components/tinted-image";
 import { Heading } from "~/components/typography";
+import * as media from "~/media";
 
 export const query = graphql`
   fragment PostFull_Header on Mdx {
@@ -36,10 +37,13 @@ export const PostHeader = ({ mdx }) => (
       fluid={mdx.frontmatter.image.source.childImageSharp.fluid}
       css={{
         gridColumn: `1 / 4`,
-        gridRow: `2 / 4`,
+        gridRow: `2`,
         zIndex: `-10`,
         "*::selection": {
           background: `none`,
+        },
+        [media.mobile.above]: {
+          gridRowEnd: `4`,
         },
       }}
       tintCss={{
@@ -57,10 +61,15 @@ export const PostHeader = ({ mdx }) => (
         gridColumn: `2`,
         gridRow: `3`,
         padding: `20px`,
-        background: colors.mono.white,
         textAlign: `center`,
-        borderTopLeftRadius: `2px`,
-        borderTopRightRadius: `2px`,
+        [media.mobile.above]: {
+          borderTopLeftRadius: `2px`,
+          borderTopRightRadius: `2px`,
+          background: colors.mono.white,
+        },
+        [media.mobile.below]: {
+          paddingBottom: `0px`,
+        },
       }}
     >
       <Heading level={1} css={{ margin: `0px` }}>

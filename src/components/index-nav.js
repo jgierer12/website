@@ -10,9 +10,8 @@ export const Nav = props => (
     css={{
       display: `flex`,
       alignItems: `center`,
-      "& > * + *": {
-        marginLeft: `40px`,
-      },
+      justifyContent: `space-between`,
+      paddingRight: `20px`,
     }}
   />
 );
@@ -26,7 +25,7 @@ const NavItem = props => (
         ...transition(`color`),
         ...transition.out,
         display: `block`,
-        height: `50px`,
+        lineHeight: `1`,
         "&:hover": {
           ...transition.in,
           color: colors.greens.dark,
@@ -37,8 +36,8 @@ const NavItem = props => (
 );
 
 export const NavItemIcon = ({ icon: Icon, label, ...props }) => (
-  <NavItem {...props} aria-label={label}>
-    <Icon role="img" fill="currentColor" width="50px" height="50px" />
+  <NavItem {...props} aria-label={label} css={{ lineHeight: `0` }}>
+    <Icon role="img" fill="currentColor" width="2em" height="2em" />
   </NavItem>
 );
 
@@ -46,7 +45,6 @@ export const NavItemText = props => (
   <NavItem
     {...props}
     css={{
-      paddingTop: `6px`,
       fontWeight: `700`,
       letterSpacing: `2px`,
       textTransform: `uppercase`,

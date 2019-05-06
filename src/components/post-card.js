@@ -5,6 +5,7 @@ import { Link } from "~/components/link";
 import { TintedImage } from "~/components/tinted-image";
 import * as colors from "~/colors";
 import { transition } from "~/transition";
+import * as media from "~/media";
 
 export const postCardFragment = graphql`
   fragment PostCard on Mdx {
@@ -41,8 +42,10 @@ export const PostCard = ({ data }) => {
       <TintedImage
         fluid={data.frontmatter.image.source.childImageSharp.fluid}
         css={{
-          borderTopLeftRadius: `4px`,
-          borderTopRightRadius: `4px`,
+          [media.phone.above]: {
+            borderTopLeftRadius: `4px`,
+            borderTopRightRadius: `4px`,
+          },
           height: `250px`,
           "& img": {
             objectPosition:
@@ -69,10 +72,12 @@ export const PostCard = ({ data }) => {
       <div
         css={{
           padding: `20px`,
-          border: `1px solid ${colors.mono.light}`,
           borderTop: `none`,
-          borderBottomLeftRadius: `4px`,
-          borderBottomRightRadius: `4px`,
+          [media.phone.above]: {
+            border: `1px solid ${colors.mono.light}`,
+            borderBottomLeftRadius: `4px`,
+            borderBottomRightRadius: `4px`,
+          },
         }}
       >
         <h2

@@ -63,7 +63,6 @@ export const Quote = props => (
     {...props}
     css={{
       color: colors.mono.dark,
-      // marginLeft: `-20px`,
       paddingLeft: `15px`,
       borderLeft: `5px solid ${colors.greens.light}`,
       fontStyle: `italic`,

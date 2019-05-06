@@ -8,6 +8,7 @@ import * as colors from "~/colors";
 import { SEO } from "~/components/seo";
 import { SearchContextProvider } from "~/components/search-context";
 import { inter, InterPreload } from "~/fonts/inter";
+import * as media from "~/media";
 
 export const Layout = withSlots(
   [`SEO`],
@@ -23,14 +24,14 @@ export const Layout = withSlots(
                 height: `100%`,
                 width: `100%`,
               },
-              font: `120%/1.65 ${inter}`,
+              font: `100%/1.65 ${inter}`,
               color: colors.mono.text,
               "& ::selection": {
                 background: colors.mono.text,
                 color: colors.mono.white,
               },
-              "@media screen and (max-width: 900px)": {
-                fontSize: `18px`,
+              [media.mobile.above]: {
+                fontSize: `120%`,
               },
             },
             "body > noscript": {

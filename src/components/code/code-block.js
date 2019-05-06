@@ -3,6 +3,7 @@ import * as React from "react";
 import { dankMono } from "~/fonts/dank-mono";
 import { inter } from "~/fonts/inter";
 import * as colors from "~/colors";
+import * as media from "~/media";
 
 export const CodeBlock = ({ filename, language }) => ({
   tokens,
@@ -12,7 +13,6 @@ export const CodeBlock = ({ filename, language }) => ({
   <pre
     css={{
       fontFamily: dankMono,
-      borderRadius: `4px`,
       margin: `0 -20px`,
       marginTop: `10px`,
       overflow: `hidden`,
@@ -20,6 +20,9 @@ export const CodeBlock = ({ filename, language }) => ({
       "& ::selection": {
         background: colors.mono.light,
         color: colors.mono.text,
+      },
+      [media.mobile.above]: {
+        borderRadius: `4px`,
       },
     }}
   >

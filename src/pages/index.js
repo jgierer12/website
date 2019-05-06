@@ -8,6 +8,7 @@ import * as colors from "~/colors";
 import { Layout } from "~/components/layout";
 import { Nav, NavItemIcon, NavItemText } from "~/components/index-nav";
 import { TintedImage } from "~/components/tinted-image";
+import * as media from "~/media";
 
 export const query = graphql`
   query {
@@ -43,7 +44,7 @@ export default ({ data }) => (
         display: `flex`,
         alignItems: `center`,
         justifyContent: `center`,
-        "@media screen and (max-width: 800px)": {
+        [media.mobile.below]: {
           flexDirection: `column`,
         },
         fontSize: `150%`,
@@ -55,12 +56,8 @@ export default ({ data }) => (
         css={{
           borderRadius: `50%`,
           flexShrink: 0,
-          width: `335px !important`,
-          height: `335px !important`,
-          "@media screen and (min-width: 600px) and (max-width: 800px)": {
-            width: `275px !important`,
-            height: `275px !important`,
-          },
+          maxWidth: `calc(100vw - 40px)`,
+          maxHeight: `calc(100vw - 40px)`,
         }}
         tintCss={{
           background: colors.greens.primary,
@@ -68,14 +65,15 @@ export default ({ data }) => (
       />
       <div
         css={{
-          width: `420px`,
-          margin: `20px`,
+          maxWidth: `420px`,
           "& > * + *": {
             marginTop: `10px`,
           },
-          "@media screen and (max-width: 800px)": {
-            margin: `20px 10px`,
-            width: `auto`,
+          [media.mobile.below]: {
+            marginTop: `20px`,
+          },
+          [media.mobile.above]: {
+            marginLeft: `20px`,
           },
         }}
       >

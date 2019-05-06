@@ -8,7 +8,7 @@ export const BlogLayout = ({ children, header: Header = DefaultHeader }) => {
       <div
         css={{
           display: `grid`,
-          gridTemplateColumns: `1fr 720px 1fr`,
+          gridTemplateColumns: `1fr minmax(1vw, 720px) 1fr`,
         }}
       >
         <Header
