@@ -1,9 +1,34 @@
 import * as React from "react";
 import { format as formatDate } from "date-fns";
+import { graphql } from "gatsby";
 
 import * as colors from "~/colors";
 import { TintedImage } from "~/components/tinted-image";
 import { Heading } from "~/components/typography";
+
+export const query = graphql`
+  fragment PostFull_Header on Mdx {
+    frontmatter {
+      title
+      published
+      author
+      image {
+        source {
+          childImageSharp {
+            fluid(
+              maxWidth: 1920
+              maxHeight: 600
+              quality: 95
+              grayscale: true
+            ) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+      }
+    }
+  }
+`;
 
 export const PostHeader = ({ mdx }) => (
   <>
