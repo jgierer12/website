@@ -66,7 +66,7 @@ export const Header = withSlots(
         },
         [media.mobile.below]: {
           height: `70px`,
-          padding: `20px 10px`,
+          padding: `10px 20px`,
         },
       }}
     >
