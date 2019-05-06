@@ -10,6 +10,7 @@ export const query = graphql`
       ...PostFull
       excerpt
       frontmatter {
+        title
         image {
           source {
             childImageSharp {
@@ -27,6 +28,7 @@ export const query = graphql`
 export default ({ data: { post } }) => (
   <Layout>
     <Layout.SEO
+      title={post.frontmatter.title}
       description={post.excerpt}
       image={post.frontmatter.image.source.childImageSharp.fixed.src}
     />
