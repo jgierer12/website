@@ -4,13 +4,12 @@ import { dankMono } from "~/fonts/dank-mono";
 import { inter } from "~/fonts/inter";
 import * as colors from "~/colors";
 
-export const CodeBlock = ({ filename, language, ...props }) => ({
+export const CodeBlock = ({ filename, language }) => ({
   tokens,
   getLineProps,
   getTokenProps,
 }) => (
   <pre
-    {...props}
     css={{
       fontFamily: dankMono,
       borderRadius: `4px`,
