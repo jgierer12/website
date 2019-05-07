@@ -73,7 +73,7 @@ export const Quote = props => (
 export const Break = () => (
   <hr
     css={{
-      margin: `50px 0px`,
+      margin: `50px 0px !important`,
       color: colors.mono.light,
     }}
   />
