@@ -16,11 +16,7 @@ export const baseCss = {
 };
 
 export const Heading = ({ level, ...props }) => {
-  const H = React.useMemo(
-    () => ({ children, ...hProps }) =>
-      React.createElement(`h${level}`, hProps, children),
-    [level]
-  );
+  const As = `h${level}`;
 
   // prettier-ignore
   const fontSize = React.useMemo(
@@ -29,7 +25,7 @@ export const Heading = ({ level, ...props }) => {
   );
 
   return (
-    <H
+    <As
       {...props}
       css={{
         fontFamily: inter,
