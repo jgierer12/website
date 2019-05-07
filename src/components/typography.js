@@ -73,3 +73,27 @@ export const Quote = props => (
     }}
   />
 );
+
+export const Break = () => (
+  <hr
+    css={{
+      margin: `50px 0px`,
+      color: colors.mono.light,
+    }}
+  />
+);
+
+export const List = ({ as: As = `ul`, ...props }) => (
+  <As
+    {...props}
+    css={{
+      paddingLeft: `20px`,
+      listStyle: `initial`,
+      listStylePosition: `outside`,
+    }}
+  />
+);
+
+export const OrderedList = ({ as = `ol`, ...props }) => (
+  <List {...props} as={as} css={{ listStyle: `decimal` }} />
+);

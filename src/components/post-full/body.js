@@ -51,6 +51,9 @@ export const PostBody = ({ mdx }) => (
           h1: props => <Typography.Heading level={1} {...props} />,
           h2: props => <Typography.Heading level={2} {...props} />,
           h3: props => <Typography.Heading level={3} {...props} />,
+          hr: Typography.Break,
+          ul: Typography.List,
+          ol: Typography.OrderedList,
         }}
       >
         <MDXRenderer>{mdx.code.body}</MDXRenderer>
