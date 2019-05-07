@@ -20,7 +20,7 @@ export const CodeBlock = ({ filename, language }) => ({
         background: colors.mono.light,
         color: colors.mono.text,
       },
-      [media.mobile.above]: {
+      [media.phone.above]: {
         borderRadius: `4px`,
       },
     }}
