@@ -83,17 +83,26 @@ export const PostHeader = ({ mdx }) => (
             fontStyle: `normal`,
             color: colors.mono.text,
           },
+          "& > *": {
+            whiteSpace: `nowrap`,
+          },
+          [media.mobile.below]: {
+            fontSize: `90%`,
+          },
         }}
       >
-        Published on{` `}
-        <em>
-          <time dateTime={mdx.frontmatter.published}>
-            {formatDate(mdx.frontmatter.published, `MMMM D, YYYY`)}
-          </time>
-        </em>
+        <span>
+          Published on{` `}
+          <em>
+            <time dateTime={mdx.frontmatter.published}>
+              {formatDate(mdx.frontmatter.published, `MMMM D, YYYY`)}
+            </time>
+          </em>
+        </span>
         {` `}
-        by{` `}
-        <em>{mdx.frontmatter.author || `Jonas Gierer`}</em>
+        <span>
+          by <em>{mdx.frontmatter.author || `Jonas Gierer`}</em>
+        </span>
       </div>
     </div>
   </>

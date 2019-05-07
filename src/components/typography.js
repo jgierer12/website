@@ -5,6 +5,7 @@ import { inter } from "~/fonts/inter";
 import { ptSerif } from "~/fonts/pt-serif";
 import { Link as DefaultLink } from "~/components/link";
 import { transition } from "~/transition";
+import * as media from "~/media";
 
 export const baseCss = {
   fontFamily: ptSerif,
@@ -23,7 +24,7 @@ export const Heading = ({ level, ...props }) => {
 
   // prettier-ignore
   const fontSize = React.useMemo(
-    () => [`250%`, `200%`, `150%`][level - 1],
+    () => [200, 160, 120][level - 1],
     [level]
   );
 
@@ -32,10 +33,13 @@ export const Heading = ({ level, ...props }) => {
       {...props}
       css={{
         fontFamily: inter,
-        fontSize,
+        fontSize: `${fontSize}%`,
         lineHeight: `1.2`,
         fontWeight: `500`,
         marginTop: `40px`,
+        [media.mobile.above]: {
+          fontSize: `${1.25 * fontSize}%`,
+        },
       }}
     />
   );
