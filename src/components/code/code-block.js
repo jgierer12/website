@@ -13,8 +13,7 @@ export const CodeBlock = ({ filename, language }) => ({
   <pre
     css={{
       fontFamily: dankMono,
-      margin: `0 -20px`,
-      marginTop: `10px`,
+      margin: `15px -20px`,
       overflow: `hidden`,
       lineHeight: `1.5`,
       "& ::selection": {
