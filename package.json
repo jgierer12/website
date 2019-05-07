@@ -3,7 +3,7 @@
   "scripts": {
     "build": "gatsby build",
     "build:fonts": "node scripts/build-fonts.js",
-    "develop": "gatsby develop",
+    "develop": "gatsby develop --host 0.0.0.0",
     "preserve": "run-s build",
     "serve": "gatsby serve",
     "test": "run-s lint",
