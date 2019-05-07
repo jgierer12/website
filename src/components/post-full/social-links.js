@@ -34,10 +34,11 @@ export const SocialLinks = ({ mdx }) => {
   );
   const redditUrl = React.useMemo(
     () =>
+      (mdx.frontmatter.social && mdx.frontmatter.social.redditUrl) ||
       `https://www.reddit.com/submit?url=${encodeURIComponent(
         postUrl
       )}&title=${encodeURIComponent(mdx.frontmatter.title)}`,
-    []
+    [mdx.frontmatter.social]
   );
   const githubUrl = React.useMemo(
     () =>
@@ -85,9 +86,7 @@ export const SocialLinks = ({ mdx }) => {
         <Link to={twitterUrl}>Discuss on Twitter</Link>
       </li>
       <li>
-        <Link to={mdx.frontmatter.social.redditUrl || redditUrl}>
-          Discuss on Reddit
-        </Link>
+        <Link to={redditUrl}>Discuss on Reddit</Link>
       </li>
       <li>
         <Link to={githubUrl}>Edit on GitHub</Link>
