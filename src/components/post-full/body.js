@@ -37,7 +37,7 @@ export const PostBody = ({ mdx }) => (
     <article
       css={{
         ...Typography.baseCss,
-        gridColumn: `2`,
+        gridColumn: `3`,
         gridRow: `4`,
         padding: `20px`,
       }}

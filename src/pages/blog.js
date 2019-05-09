@@ -23,7 +23,7 @@ export default () => {
         <BlogLayout header={HeaderWithSearch}>
           <div
             css={{
-              gridColumn: `2`,
+              gridColumn: `3`,
               gridRow: `4`,
               paddingBottom: `20px`,
             }}

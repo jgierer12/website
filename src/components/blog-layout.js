@@ -13,15 +13,15 @@ export const BlogLayout = ({
       {...props}
       css={{
         display: `grid`,
-        gridTemplateColumns: `0px 100vw 0px`,
+        gridTemplateColumns: `0px 0px 100vw 0px 0px`,
         [media.phone.above]: {
-          gridTemplateColumns: `1fr 720px 1fr`,
+          gridTemplateColumns: `1fr minmax(0px, 100px) 720px minmax(0px, 100px) 1fr`,
         },
       }}
     >
       <Header
         css={{
-          gridColumn: `2`,
+          gridColumn: `3`,
           gridRow: `1`,
         }}
       />

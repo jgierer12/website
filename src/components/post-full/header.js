@@ -36,7 +36,7 @@ export const PostHeader = ({ mdx }) => (
     <TintedImage
       fluid={mdx.frontmatter.image.source.childImageSharp.fluid}
       css={{
-        gridColumn: `1 / 4`,
+        gridColumn: `1 / 6`,
         gridRow: `2`,
         zIndex: `-10`,
         "*::selection": {
@@ -58,7 +58,7 @@ export const PostHeader = ({ mdx }) => (
     />
     <div
       css={{
-        gridColumn: `2`,
+        gridColumn: `3`,
         gridRow: `3`,
         padding: `20px`,
         textAlign: `center`,

@@ -88,7 +88,7 @@ const List = ({ children }) => (
       display: `flex`,
       fontSize: `90%`,
       gridRow: `5`,
-      gridColumn: `2`,
+      gridColumn: `3`,
       justifyContent: `space-between`,
       textAlign: `center`,
       "& > * + *": {
