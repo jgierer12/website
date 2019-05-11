@@ -5,7 +5,6 @@ import "focus-visible";
 
 import * as colors from "~/colors";
 import { SEO } from "~/components/seo";
-import { SearchStateProvider } from "~/contexts/search";
 import { inter, InterPreload } from "~/fonts/inter";
 import * as media from "~/media";
 
@@ -42,7 +41,7 @@ export const Layout = ({ children }) => {
           },
         }}
       />
-      <SearchStateProvider>{children}</SearchStateProvider>
+      {children}
     </>
   );
 };
