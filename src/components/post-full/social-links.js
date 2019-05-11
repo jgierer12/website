@@ -51,7 +51,7 @@ const Item = ({ verb = `Discuss`, platform, icon: Icon, url }) => (
         ...transition.out,
         ":hover": {
           ...transition.in,
-          color: colors.mono.medium,
+          color: colors.mono.dark,
         },
       }}
     >
