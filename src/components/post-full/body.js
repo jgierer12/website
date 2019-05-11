@@ -6,7 +6,7 @@ import { graphql } from "gatsby";
 import * as Typography from "~/components/typography";
 import { Code } from "~/components/code";
 import { PTSerifPreload } from "~/fonts/pt-serif";
-import { usePostContext } from "~/contexts/post";
+import { usePost } from "~/contexts/post";
 
 export const query = graphql`
   fragment PostFull_Body on Mdx {
@@ -33,7 +33,7 @@ const MdxCode = ({
 };
 
 export const PostBody = () => {
-  const mdx = usePostContext();
+  const mdx = usePost();
 
   return (
     <>

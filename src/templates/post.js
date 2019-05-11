@@ -3,7 +3,7 @@ import { graphql } from "gatsby";
 
 import { Layout } from "~/components/layout";
 import { PostFull } from "~/components/post-full";
-import { PostContextProvider } from "~/contexts/post";
+import { PostContext } from "~/contexts/post";
 
 export const query = graphql`
   query($id: String) {
@@ -27,7 +27,7 @@ export const query = graphql`
 `;
 
 export default ({ data: { post } }) => (
-  <PostContextProvider value={post}>
+  <PostContext.Provider value={post}>
     <Layout>
       <Layout.SEO
         title={post.frontmatter.title}
@@ -36,5 +36,5 @@ export default ({ data: { post } }) => (
       />
       <PostFull />
     </Layout>
-  </PostContextProvider>
+  </PostContext.Provider>
 );

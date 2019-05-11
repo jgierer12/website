@@ -2,7 +2,7 @@ import * as React from "react";
 
 export const SearchContext = React.createContext();
 
-export const SearchContextProvider = ({ children }) => {
+export const SearchStateProvider = ({ children }) => {
   const [isSearch, setIsSearch] = React.useState(false);
   const [searchQuery, setSearchQuery] = React.useState(``);
 
@@ -21,6 +21,4 @@ export const SearchContextProvider = ({ children }) => {
   );
 };
 
-export const useSearchContext = () => {
-  return React.useContext(SearchContext);
-};
+export const useSearch = () => React.useContext(SearchContext);

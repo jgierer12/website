@@ -6,7 +6,7 @@ import * as colors from "~/colors";
 import { TintedImage } from "~/components/tinted-image";
 import { Heading } from "~/components/typography";
 import * as media from "~/media";
-import { usePostContext } from "~/contexts/post";
+import { usePost } from "~/contexts/post";
 
 export const query = graphql`
   fragment PostFull_Header on Mdx {
@@ -33,7 +33,7 @@ export const query = graphql`
 `;
 
 export const PostHeader = () => {
-  const mdx = usePostContext();
+  const mdx = usePost();
 
   return (
     <>

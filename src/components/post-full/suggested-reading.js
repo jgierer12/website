@@ -7,7 +7,7 @@ import * as colors from "~/colors";
 import { transition } from "~/transition";
 import * as media from "~/media";
 import { TintedImage } from "~/components/tinted-image";
-import { usePostContext } from "~/contexts/post";
+import { usePost } from "~/contexts/post";
 
 export const query = graphql`
   fragment PostFull_SuggestedReading on Mdx {
@@ -113,7 +113,7 @@ const Item = ({ url, title, image }) => {
 export const SuggestedReading = () => {
   const {
     frontmatter: { suggestedReading },
-  } = usePostContext();
+  } = usePost();
 
   if (!suggestedReading || suggestedReading.length === 0) {
     return null;

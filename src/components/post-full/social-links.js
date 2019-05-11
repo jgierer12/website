@@ -9,7 +9,7 @@ import * as colors from "~/colors";
 import { transition } from "~/transition";
 import { siteMetadata, repo } from "~/config";
 import * as media from "~/media";
-import { usePostContext } from "~/contexts/post";
+import { usePost } from "~/contexts/post";
 
 export const query = graphql`
   fragment PostFull_SocialLinks on Mdx {
@@ -114,7 +114,7 @@ const List = ({ children }) => (
 );
 
 export const SocialLinks = () => {
-  const mdx = usePostContext();
+  const mdx = usePost();
 
   const postUrl = `${siteMetadata.url}${mdx.fields.slug}`;
 

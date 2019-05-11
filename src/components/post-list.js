@@ -3,7 +3,7 @@ import Fuse from "fuse.js";
 import { graphql } from "gatsby";
 
 import { PostCard } from "~/components/post-card";
-import { useSearchContext } from "~/contexts/search";
+import { useSearch } from "~/contexts/search";
 
 export const postListPostFragment = graphql`
   fragment PostListPost on Mdx {
@@ -17,7 +17,7 @@ export const postListPostFragment = graphql`
 `;
 
 export const PostList = ({ posts, ...props }) => {
-  const { isSearch, searchQuery } = useSearchContext();
+  const { isSearch, searchQuery } = useSearch();
 
   const fuse = React.useMemo(
     () =>

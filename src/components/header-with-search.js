@@ -3,11 +3,11 @@ import SearchIcon from "boxicons/svg/regular/bx-search.svg";
 import XIcon from "boxicons/svg/regular/bx-x.svg";
 
 import * as colors from "~/colors";
-import { useSearchContext } from "~/contexts/search";
+import { useSearch } from "~/contexts/search";
 import { Header, HeaderLink } from "~/components/header";
 
 const SearchButton = () => {
-  const { isSearch, setIsSearch } = useSearchContext();
+  const { isSearch, setIsSearch } = useSearch();
 
   const toggleSearch = React.useCallback(
     () => setIsSearch(current => !current),
@@ -27,7 +27,7 @@ const SearchButton = () => {
 };
 
 const SearchInput = () => {
-  const { searchQuery, setSearchQuery, setIsSearch } = useSearchContext();
+  const { searchQuery, setSearchQuery, setIsSearch } = useSearch();
   const handleSearchChange = React.useCallback(event => {
     setSearchQuery(event.target.value);
   }, []);
@@ -61,7 +61,7 @@ const SearchInput = () => {
 };
 
 export const HeaderWithSearch = props => {
-  const { isSearch } = useSearchContext();
+  const { isSearch } = useSearch();
   return (
     <Header {...props}>
       {isSearch && (
