@@ -57,10 +57,15 @@ export const Footer = () => {
         fontSize: `90%`,
       }}
     >
-      Header image by{` `}
-      <FooterLink to={credit.artist.url}>{credit.artist.name}</FooterLink>
-      {` `}
-      on <FooterLink to={credit.source.url}>{credit.source.name}</FooterLink>
+      {credit && (
+        <p>
+          Header image by{` `}
+          <FooterLink to={credit.artist.url}>{credit.artist.name}</FooterLink>
+          {` `}
+          on{` `}
+          <FooterLink to={credit.source.url}>{credit.source.name}</FooterLink>
+        </p>
+      )}
     </div>
   );
 };
