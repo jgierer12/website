@@ -1,5 +1,6 @@
 import * as React from "react";
 
+import { Layout } from "~/components/layout";
 import { Header as DefaultHeader } from "~/components/header";
 import * as media from "~/media";
 
@@ -7,8 +8,8 @@ export const BlogLayout = ({
   children,
   header: Header = DefaultHeader,
   ...props
-}) => {
-  return (
+}) => (
+  <Layout>
     <div
       {...props}
       css={{
@@ -27,5 +28,5 @@ export const BlogLayout = ({
       />
       {children}
     </div>
-  );
-};
+  </Layout>
+);

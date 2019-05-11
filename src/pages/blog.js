@@ -1,7 +1,6 @@
 import * as React from "react";
 import { Global } from "@emotion/core";
 
-import { Layout } from "~/components/layout";
 import { AllPostList } from "~/components/all-post-list";
 import { BlogLayout } from "~/components/blog-layout";
 import { HeaderWithSearch } from "~/components/header-with-search";
@@ -22,18 +21,16 @@ export default () => (
         },
       }}
     />
-    <Layout>
-      <BlogLayout header={HeaderWithSearch}>
-        <div
-          css={{
-            gridColumn: `3`,
-            gridRow: `4`,
-            paddingBottom: `20px`,
-          }}
-        >
-          <AllPostList />
-        </div>
-      </BlogLayout>
-    </Layout>
+    <BlogLayout header={HeaderWithSearch}>
+      <div
+        css={{
+          gridColumn: `3`,
+          gridRow: `4`,
+          paddingBottom: `20px`,
+        }}
+      >
+        <AllPostList />
+      </div>
+    </BlogLayout>
   </PageContext.Provider>
 );

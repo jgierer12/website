@@ -1,7 +1,7 @@
 import * as React from "react";
 import { graphql } from "gatsby";
 
-import { Layout } from "~/components/layout";
+import { BlogLayout } from "~/components/blog-layout";
 import { PostFull } from "~/components/post-full";
 import { PostContext } from "~/contexts/post";
 import { PageContext } from "~/contexts/page";
@@ -37,9 +37,9 @@ export default ({ data: { post } }) => (
     }}
   >
     <PostContext.Provider value={post}>
-      <Layout>
+      <BlogLayout>
         <PostFull />
-      </Layout>
+      </BlogLayout>
     </PostContext.Provider>
   </PageContext.Provider>
 );
