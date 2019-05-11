@@ -1,24 +1,10 @@
 import * as React from "react";
 import Helmet from "react-helmet";
-import { graphql, useStaticQuery } from "gatsby";
 
 import { usePage } from "~/contexts/page";
 
 export const SEO = () => {
-  const { title, description, image, type } = usePage();
-  const {
-    site: {
-      siteMetadata: { url },
-    },
-  } = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          url
-        }
-      }
-    }
-  `);
+  const { title, description, image, type, url } = usePage();
 
   return (
     <Helmet>

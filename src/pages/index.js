@@ -9,7 +9,7 @@ import { Layout } from "~/components/layout";
 import { Nav, NavItemIcon, NavItemText } from "~/components/index-nav";
 import { TintedImage } from "~/components/tinted-image";
 import * as media from "~/media";
-import { PageContext } from "~/contexts/page";
+import { PageProvider } from "~/contexts/page";
 
 export const query = graphql`
   query {
@@ -36,12 +36,7 @@ const Highlight = ({ children }) => (
 );
 
 export default ({ data }) => (
-  <PageContext.Provider
-    value={{
-      title: `Jonas Gierer`,
-      description: `Hi! My name is Jonas Gierer. I love creating modern and accessible websites and apps using JavaScript, React and other awesome technologies.`,
-    }}
-  >
+  <PageProvider>
     <Layout>
       <main
         css={{
@@ -125,5 +120,5 @@ export default ({ data }) => (
         </div>
       </main>
     </Layout>
-  </PageContext.Provider>
+  </PageProvider>
 );

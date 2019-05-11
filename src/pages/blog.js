@@ -4,15 +4,11 @@ import { Global } from "@emotion/core";
 import { AllPostList } from "~/components/all-post-list";
 import { BlogLayout } from "~/components/blog-layout";
 import { HeaderWithSearch } from "~/components/header-with-search";
-import { PageContext } from "~/contexts/page";
+import { PageProvider } from "~/contexts/page";
 import { SearchStateProvider } from "~/contexts/search";
 
 export default () => (
-  <PageContext.Provider
-    value={{
-      title: `Jonas Gierer's Blog`,
-    }}
-  >
+  <PageProvider title="Jonas Gierer's Blog">
     <SearchStateProvider>
       <Global
         styles={{
@@ -35,5 +31,5 @@ export default () => (
         </div>
       </BlogLayout>
     </SearchStateProvider>
-  </PageContext.Provider>
+  </PageProvider>
 );
