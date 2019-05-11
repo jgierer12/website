@@ -9,6 +9,7 @@ import { Layout } from "~/components/layout";
 import { Nav, NavItemIcon, NavItemText } from "~/components/index-nav";
 import { TintedImage } from "~/components/tinted-image";
 import * as media from "~/media";
+import { PageContext } from "~/contexts/page";
 
 export const query = graphql`
   query {
@@ -35,88 +36,94 @@ const Highlight = ({ children }) => (
 );
 
 export default ({ data }) => (
-  <Layout>
-    <Layout.SEO description="Hi! My name is Jonas Gierer. I love creating modern and accessible websites and apps using JavaScript, React and other awesome technologies." />
-    <main
-      css={{
-        minHeight: `100%`,
-        padding: `20px`,
-        display: `flex`,
-        alignItems: `center`,
-        justifyContent: `center`,
-        [media.mobile.below]: {
-          flexDirection: `column`,
-        },
-        fontSize: `150%`,
-        lineHeight: `1.25`,
-      }}
-    >
-      <TintedImage
-        fixed={data.file.childImageSharp.fixed}
+  <PageContext.Provider
+    value={{
+      title: `Jonas Gierer`,
+      description: `Hi! My name is Jonas Gierer. I love creating modern and accessible websites and apps using JavaScript, React and other awesome technologies.`,
+    }}
+  >
+    <Layout>
+      <main
         css={{
-          borderRadius: `50%`,
-          flexShrink: 0,
-          maxWidth: `calc(100vw - 40px)`,
-          maxHeight: `calc(100vw - 40px)`,
-        }}
-        tintCss={{
-          background: colors.greens.primary,
-        }}
-      />
-      <div
-        css={{
-          maxWidth: `420px`,
-          "& > * + *": {
-            marginTop: `10px`,
-          },
+          minHeight: `100%`,
+          padding: `20px`,
+          display: `flex`,
+          alignItems: `center`,
+          justifyContent: `center`,
           [media.mobile.below]: {
-            marginTop: `20px`,
+            flexDirection: `column`,
           },
-          [media.mobile.above]: {
-            marginLeft: `20px`,
-          },
+          fontSize: `150%`,
+          lineHeight: `1.25`,
         }}
       >
-        <p>Hi! My name is</p>
-        <h1
+        <TintedImage
+          fixed={data.file.childImageSharp.fixed}
           css={{
-            fontSize: `175%`,
-            transform: `translateX(-2px)`,
-            color: colors.greens.dark,
-            fontWeight: `500`,
+            borderRadius: `50%`,
+            flexShrink: 0,
+            maxWidth: `calc(100vw - 40px)`,
+            maxHeight: `calc(100vw - 40px)`,
+          }}
+          tintCss={{
+            background: colors.greens.primary,
+          }}
+        />
+        <div
+          css={{
+            maxWidth: `420px`,
+            "& > * + *": {
+              marginTop: `10px`,
+            },
+            [media.mobile.below]: {
+              marginTop: `20px`,
+            },
+            [media.mobile.above]: {
+              marginLeft: `20px`,
+            },
           }}
         >
-          Jonas Gierer
-        </h1>
-        <p>
-          I love creating <Highlight>modern</Highlight> and{` `}
-          <Highlight>accessible</Highlight> websites and apps using{` `}
-          <Highlight>JavaScript</Highlight>, <Highlight>React</Highlight> and
-          other awesome technologies.
-        </p>
-        <Nav
-          css={{
-            marginTop: `20px`,
-          }}
-        >
-          <NavItemIcon
-            to="https://twitter.com/jgierer12"
-            label="Visit my Twitter profile"
-            icon={TwitterIcon}
-          />
-          <NavItemIcon
-            to="https://github.com/jgierer12"
-            label="Visit my GitHub profile"
-            icon={GitHubIcon}
-          />
-          <NavItemIcon
-            href="mailto:jonas@gierer.xyz"
-            label="Send me an email"
-            icon={EmailIcon}
-          />
-          <NavItemText to="/blog">Blog</NavItemText>
-        </Nav>
-      </div>
-    </main>
-  </Layout>
+          <p>Hi! My name is</p>
+          <h1
+            css={{
+              fontSize: `175%`,
+              transform: `translateX(-2px)`,
+              color: colors.greens.dark,
+              fontWeight: `500`,
+            }}
+          >
+            Jonas Gierer
+          </h1>
+          <p>
+            I love creating <Highlight>modern</Highlight> and{` `}
+            <Highlight>accessible</Highlight> websites and apps using{` `}
+            <Highlight>JavaScript</Highlight>, <Highlight>React</Highlight> and
+            other awesome technologies.
+          </p>
+          <Nav
+            css={{
+              marginTop: `20px`,
+            }}
+          >
+            <NavItemIcon
+              to="https://twitter.com/jgierer12"
+              label="Visit my Twitter profile"
+              icon={TwitterIcon}
+            />
+            <NavItemIcon
+              to="https://github.com/jgierer12"
+              label="Visit my GitHub profile"
+              icon={GitHubIcon}
+            />
+            <NavItemIcon
+              href="mailto:jonas@gierer.xyz"
+              label="Send me an email"
+              icon={EmailIcon}
+            />
+            <NavItemText to="/blog">Blog</NavItemText>
+          </Nav>
+        </div>
+      </main>
+    </Layout>
+  </PageContext.Provider>
 );

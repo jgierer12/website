@@ -4,6 +4,7 @@ import { graphql } from "gatsby";
 import { Layout } from "~/components/layout";
 import { PostFull } from "~/components/post-full";
 import { PostContext } from "~/contexts/post";
+import { PageContext } from "~/contexts/page";
 
 export const query = graphql`
   query($id: String) {
@@ -27,14 +28,18 @@ export const query = graphql`
 `;
 
 export default ({ data: { post } }) => (
-  <PostContext.Provider value={post}>
-    <Layout>
-      <Layout.SEO
-        title={post.frontmatter.title}
-        description={post.excerpt}
-        image={post.frontmatter.image.source.childImageSharp.fixed.src}
-      />
-      <PostFull />
-    </Layout>
-  </PostContext.Provider>
+  <PageContext.Provider
+    value={{
+      title: post.frontmatter.title,
+      description: post.excerpt,
+      image: post.frontmatter.image.source.childImageSharp.fixed.src,
+      type: `article`,
+    }}
+  >
+    <PostContext.Provider value={post}>
+      <Layout>
+        <PostFull />
+      </Layout>
+    </PostContext.Provider>
+  </PageContext.Provider>
 );
