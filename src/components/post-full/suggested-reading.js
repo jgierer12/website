@@ -123,13 +123,6 @@ export const SuggestedReading = () => {
     <>
       <div
         css={{
-          gridColumn: `1 / -1`,
-          gridRow: `6`,
-          background: colors.mono.light,
-        }}
-      />
-      <div
-        css={{
           gridColumn: `2 / 5`,
           gridRow: `6`,
           padding: `20px`,
