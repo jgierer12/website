@@ -6,7 +6,7 @@ import "focus-visible";
 
 import * as colors from "~/colors";
 import { SEO } from "~/components/seo";
-import { SearchContextProvider } from "~/components/search-context";
+import { SearchContextProvider } from "~/contexts/search";
 import { inter, InterPreload } from "~/fonts/inter";
 import * as media from "~/media";
 

@@ -16,11 +16,11 @@ export const query = graphql`
   }
 `;
 
-export const PostFull = ({ post }) => (
+export const PostFull = () => (
   <BlogLayout css={{ paddingBottom: `200px` }}>
-    <PostHeader mdx={post} />
-    <PostBody mdx={post} />
-    <SocialLinks mdx={post} />
-    <SuggestedReading mdx={post} />
+    <PostHeader />
+    <PostBody />
+    <SocialLinks />
+    <SuggestedReading />
   </BlogLayout>
 );

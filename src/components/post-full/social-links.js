@@ -9,6 +9,7 @@ import * as colors from "~/colors";
 import { transition } from "~/transition";
 import { siteMetadata, repo } from "~/config";
 import * as media from "~/media";
+import { usePostContext } from "~/contexts/post";
 
 export const query = graphql`
   fragment PostFull_SocialLinks on Mdx {
@@ -112,7 +113,9 @@ const List = ({ children }) => (
   </ul>
 );
 
-export const SocialLinks = ({ mdx }) => {
+export const SocialLinks = () => {
+  const mdx = usePostContext();
+
   const postUrl = `${siteMetadata.url}${mdx.fields.slug}`;
 
   const twitterUrl = React.useMemo(

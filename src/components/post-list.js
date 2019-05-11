@@ -3,7 +3,7 @@ import Fuse from "fuse.js";
 import { graphql } from "gatsby";
 
 import { PostCard } from "~/components/post-card";
-import { useSearchContext } from "~/components/search-context";
+import { useSearchContext } from "~/contexts/search";
 
 export const postListPostFragment = graphql`
   fragment PostListPost on Mdx {

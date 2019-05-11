@@ -3,7 +3,7 @@ import SearchIcon from "boxicons/svg/regular/bx-search.svg";
 import XIcon from "boxicons/svg/regular/bx-x.svg";
 
 import * as colors from "~/colors";
-import { useSearchContext } from "~/components/search-context";
+import { useSearchContext } from "~/contexts/search";
 import { Header, HeaderLink } from "~/components/header";
 
 const SearchButton = () => {
