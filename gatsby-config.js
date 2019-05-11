@@ -1,6 +1,21 @@
+require(`dotenv`).config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 const path = require(`path`);
 
+const url = [`deploy-preview`, `branch-deploy`].includes(process.env.CONTEXT)
+  ? process.env.DEPLOY_PRIME_URL
+  : process.env.URL;
+
 module.exports = {
+  siteMetadata: {
+    url,
+    repo: {
+      url: `https://github.com/jgierer12/website`,
+      contentDir: `src/content/posts`,
+    },
+  },
   plugins: [
     // Convenience
     `gatsby-plugin-react-helmet`,

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { graphql } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 import TwitterIcon from "boxicons/svg/logos/bxl-twitter.svg";
 import RedditIcon from "boxicons/svg/logos/bxl-reddit.svg";
 import GithubIcon from "boxicons/svg/logos/bxl-github.svg";
@@ -7,7 +7,6 @@ import GithubIcon from "boxicons/svg/logos/bxl-github.svg";
 import { Link } from "~/components/link";
 import * as colors from "~/colors";
 import { transition } from "~/transition";
-import { siteMetadata, repo } from "~/config";
 import * as media from "~/media";
 import { usePost } from "~/contexts/post";
 
@@ -114,9 +113,28 @@ const List = ({ children }) => (
 );
 
 export const SocialLinks = () => {
+  const site = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          url
+          repo {
+            url
+            contentDir
+          }
+        }
+      }
+    }
+  `);
+  const {
+    site: {
+      siteMetadata: { url, repo },
+    },
+  } = site;
+
   const mdx = usePost();
 
-  const postUrl = `${siteMetadata.url}${mdx.fields.slug}`;
+  const postUrl = `${url}${mdx.fields.slug}`;
 
   const twitterUrl = React.useMemo(
     () => `https://mobile.twitter.com/search?q=${encodeURIComponent(postUrl)}`,
