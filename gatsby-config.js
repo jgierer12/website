@@ -4,9 +4,10 @@ require(`dotenv`).config({
 
 const path = require(`path`);
 
-const url = [`deploy-preview`, `branch-deploy`].includes(process.env.CONTEXT)
-  ? process.env.DEPLOY_PRIME_URL
-  : process.env.URL;
+let url = process.env.URL || `https://jonasgierer.com`;
+if ([`deploy-preview`, `branch-deploy`].includes(process.env.CONTEXT)) {
+  url = process.env.DEPLOY_PRIME_URL;
+}
 
 module.exports = {
   siteMetadata: {
