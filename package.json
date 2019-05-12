@@ -6,21 +6,11 @@
     "preserve": "run-s build",
     "serve": "gatsby serve",
     "test": "run-s lint build test:size",
-    "test:size": "bundlesize",
+    "test:size": "bundlewatch --config .bundlewatchrc.js",
     "lint": "run-p --print-label --continue-on-error lint:*",
     "lint:js": "eslint --color --ignore-path .gitignore '**/*.js'",
     "lint:other": "prettier --check --ignore-path .gitignore '**/*.{json,md,mdx,yml,graphql}'"
   },
-  "bundlesize": [
-    {
-      "path": "./public/index.html",
-      "maxSize": "10kb"
-    },
-    {
-      "path": "./public/app-*.js",
-      "maxSize": "100kb"
-    }
-  ],
   "dependencies": {
     "@emotion/core": "^10.0.10",
     "@emotion/styled": "^10.0.10",
@@ -44,7 +34,7 @@
   },
   "devDependencies": {
     "@jgierer12/js-configs": "^0.1.1",
-    "bundlesize": "^0.17.1",
+    "bundlewatch": "^0.2.1",
     "eslint": "^5.16.0",
     "merge-deep": "^3.0.2",
     "npm-run-all": "^4.1.5",
