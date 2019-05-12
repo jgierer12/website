@@ -890,13 +890,23 @@
     signedsource "^1.0.0"
     yargs "^9.0.0"
 
-"@jgierer12/js-configs@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@jgierer12/js-configs/-/js-configs-0.1.1.tgz#79da436dfd6b1005a403a648b843b2c03e4789a4"
-  integrity sha512-7Oz16CVaOcfYeL6FHsFTCjRm48kMLkIF5PRO4w4F/Ux6b625O0Fo1veBOACpm1NUrUGAGmwgiI6Njrj7Tq8gbQ==
+"@jgierer12/js-configs@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@jgierer12/js-configs/-/js-configs-1.0.1.tgz#ab8860c9a9d68fe88250b97fef99807c576b8a47"
+  integrity sha512-4wkI40iUmM6BONqR/bYL84apPye6ZEJKI56MO+AjWcqnwh++0e26NKDsTwYZQxDz3WUinhC73Uxhc+batoBdIA==
   dependencies:
-    eslint-config-healthier "^2.0.0"
+    eslint-config-prettier "^4.2.0"
+    eslint-config-standard "^12.0.0"
+    eslint-config-standard-jsx "^6.0.2"
+    eslint-config-standard-react "^7.0.2"
+    eslint-plugin-import "^2.17.2"
+    eslint-plugin-node "^9.0.1"
     eslint-plugin-prettier "^3.0.1"
+    eslint-plugin-promise "^4.1.1"
+    eslint-plugin-react "^7.13.0"
+    eslint-plugin-react-hooks "^1.6.0"
+    eslint-plugin-standard "^4.0.0"
+    merge-deep "^3.0.2"
 
 "@mdx-js/mdx@^1.0.0":
   version "1.0.18"
@@ -4199,18 +4209,7 @@ escodegen@^1.11.0:
   optionalDependencies:
     source-map "~0.6.1"
 
-eslint-config-healthier@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-healthier/-/eslint-config-healthier-2.0.0.tgz#9cc225f2e9404b2ddb9e9491a5b84f7023c5d40b"
-  integrity sha512-Iw53gko3e478YPivrBkdfGb+pwo3cyiTCPaMtJ0R8NEzwDdfhTyTgP3tkfaVnQ8DY+TchbW0Uj57sdS0aM51jg==
-  dependencies:
-    eslint-config-prettier "^4.0.0"
-    eslint-config-standard "^12.0.0"
-    eslint-config-standard-jsx "^6.0.2"
-    eslint-config-standard-react "^7.0.2"
-    eslint-plugin-healthier "^1.1.0"
-
-eslint-config-prettier@^4.0.0:
+eslint-config-prettier@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-4.2.0.tgz#70b946b629cd0e3e98233fd9ecde4cb9778de96c"
   integrity sha512-y0uWc/FRfrHhpPZCYflWC8aE0KRJRY04rdZVfl8cL3sEZmOYyaBdhdlQPjKZBnuRMyLVK+JUZr7HaZFClQiH4w==
@@ -4268,7 +4267,7 @@ eslint-module-utils@^2.4.0:
     debug "^2.6.8"
     pkg-dir "^2.0.0"
 
-eslint-plugin-es@^1.3.1:
+eslint-plugin-es@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-es/-/eslint-plugin-es-1.4.0.tgz#475f65bb20c993fc10e8c8fe77d1d60068072da6"
   integrity sha512-XfFmgFdIUDgvaRAlaXUkxrRg5JSADoRC8IkKLc/cISeR3yHVMefFHQZpcyXXEUUPHfy5DwviBcrfqlyqEwlQVw==
@@ -4291,19 +4290,7 @@ eslint-plugin-graphql@^3.0.3:
     graphql-config "^2.0.1"
     lodash "^4.11.1"
 
-eslint-plugin-healthier@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-healthier/-/eslint-plugin-healthier-1.1.0.tgz#d672e6afcba08cb8ab1abc8a87d6d9fac9780a74"
-  integrity sha512-mpOfTKSzcknrilEff+3zf2VCMEmeD9OEkjXxqkEWbfGUSDMJe+taYja8MalszUOt/4nNVbkTXYoGyyL469r4OA==
-  dependencies:
-    eslint-plugin-import "^2.16.0"
-    eslint-plugin-node "^8.0.1"
-    eslint-plugin-promise "^4.0.1"
-    eslint-plugin-react "^7.12.4"
-    eslint-plugin-react-hooks "^1.0.2"
-    eslint-plugin-standard "^4.0.0"
-
-eslint-plugin-import@^2.16.0, eslint-plugin-import@^2.9.0:
+eslint-plugin-import@^2.17.2, eslint-plugin-import@^2.9.0:
   version "2.17.2"
   resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.17.2.tgz#d227d5c6dc67eca71eb590d2bb62fb38d86e9fcb"
   integrity sha512-m+cSVxM7oLsIpmwNn2WXTJoReOF9f/CtLMo7qOVmKd1KntBy0hEcuNZ3erTmWjx+DxRO0Zcrm5KwAvI9wHcV5g==
@@ -4334,17 +4321,17 @@ eslint-plugin-jsx-a11y@^6.0.3:
     has "^1.0.3"
     jsx-ast-utils "^2.0.1"
 
-eslint-plugin-node@^8.0.1:
-  version "8.0.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-node/-/eslint-plugin-node-8.0.1.tgz#55ae3560022863d141fa7a11799532340a685964"
-  integrity sha512-ZjOjbjEi6jd82rIpFSgagv4CHWzG9xsQAVp1ZPlhRnnYxcTgENUVBvhYmkQ7GvT1QFijUSo69RaiOJKhMu6i8w==
+eslint-plugin-node@^9.0.1:
+  version "9.0.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-node/-/eslint-plugin-node-9.0.1.tgz#93e44626fa62bcb6efea528cee9687663dc03b62"
+  integrity sha512-fljT5Uyy3lkJzuqhxrYanLSsvaILs9I7CmQ31atTtZ0DoIzRbbvInBh4cQ1CrthFHInHYBQxfPmPt6KLHXNXdw==
   dependencies:
-    eslint-plugin-es "^1.3.1"
+    eslint-plugin-es "^1.4.0"
     eslint-utils "^1.3.1"
-    ignore "^5.0.2"
+    ignore "^5.1.1"
     minimatch "^3.0.4"
-    resolve "^1.8.1"
-    semver "^5.5.0"
+    resolve "^1.10.1"
+    semver "^6.0.0"
 
 eslint-plugin-prettier@^3.0.1:
   version "3.1.0"
@@ -4353,17 +4340,17 @@ eslint-plugin-prettier@^3.0.1:
   dependencies:
     prettier-linter-helpers "^1.0.0"
 
-eslint-plugin-promise@^4.0.1:
+eslint-plugin-promise@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/eslint-plugin-promise/-/eslint-plugin-promise-4.1.1.tgz#1e08cb68b5b2cd8839f8d5864c796f56d82746db"
   integrity sha512-faAHw7uzlNPy7b45J1guyjazw28M+7gJokKUjC5JSFoYfUEyy6Gw/i7YQvmv2Yk00sUjWcmzXQLpU1Ki/C2IZQ==
 
-eslint-plugin-react-hooks@^1.0.2:
+eslint-plugin-react-hooks@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-1.6.0.tgz#348efcda8fb426399ac7b8609607c7b4025a6f5f"
   integrity sha512-lHBVRIaz5ibnIgNG07JNiAuBUeKhEf8l4etNx5vfAEwqQ5tcuK3jV9yjmopPgQDagQb7HwIuQVsE3IVcGrRnag==
 
-eslint-plugin-react@^7.12.4, eslint-plugin-react@^7.8.2:
+eslint-plugin-react@^7.13.0, eslint-plugin-react@^7.8.2:
   version "7.13.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.13.0.tgz#bc13fd7101de67996ea51b33873cd9dc2b7e5758"
   integrity sha512-uA5LrHylu8lW/eAH3bEQe9YdzpPaFd9yAJTwTi/i/BKTD7j6aQMKVAdGM/ML72zD6womuSK7EiGtMKuK06lWjQ==
@@ -6453,7 +6440,7 @@ ignore@^4.0.6:
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-4.0.6.tgz#750e3db5862087b4737ebac8207ffd1ef27b25fc"
   integrity sha512-cyFDKrqc/YdcWFniJhzI42+AzS+gNwmUzOSFcRCQYwySuBBBy/KjuxWLZ/FHEH6Moq1NizMOBWyTcv8O4OZIMg==
 
-ignore@^5.0.2:
+ignore@^5.1.1:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-5.1.1.tgz#2fc6b8f518aff48fef65a7f348ed85632448e4a5"
   integrity sha512-DWjnQIFLenVrwyRCKZT+7a7/U4Cqgar4WG8V++K3hw+lrW1hc/SIwdiGmtxKCVACmHULTuGeBbHJmbwW7/sAvA==

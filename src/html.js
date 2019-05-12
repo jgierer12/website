@@ -1,6 +1,6 @@
 import * as React from "react";
 
-// eslint-disable-next-line healthier/no-default-export
+// eslint-disable-next-line import/no-default-export
 export default ({
   htmlAttributes,
   headComponents,

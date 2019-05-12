@@ -30,7 +30,7 @@ export const PostList = ({ posts, ...props }) => {
   const filteredPosts = React.useMemo(() => {
     if (/^\s*$/.test(searchQuery)) return posts;
     return fuse.search(searchQuery);
-  }, [searchQuery]);
+  }, [fuse, posts, searchQuery]);
 
   return (
     <div

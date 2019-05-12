@@ -146,12 +146,12 @@ export const SocialLinks = () => {
       `https://www.reddit.com/submit?url=${encodeURIComponent(
         postUrl
       )}&title=${encodeURIComponent(mdx.frontmatter.title)}`,
-    [mdx.frontmatter.social]
+    [mdx.frontmatter.social, mdx.frontmatter.title, postUrl]
   );
   const githubUrl = React.useMemo(
     () =>
       `${repo.url}/edit/master/${repo.contentDir}/${mdx.parent.relativePath}`,
-    []
+    [mdx.parent.relativePath, repo.contentDir, repo.url]
   );
 
   return (

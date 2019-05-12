@@ -11,7 +11,7 @@ const SearchButton = () => {
 
   const toggleSearch = React.useCallback(
     () => setIsSearch(current => !current),
-    []
+    [setIsSearch]
   );
   const Icon = isSearch ? XIcon : SearchIcon;
 
@@ -28,9 +28,12 @@ const SearchButton = () => {
 
 const SearchInput = () => {
   const { searchQuery, setSearchQuery, setIsSearch } = useSearch();
-  const handleSearchChange = React.useCallback(event => {
-    setSearchQuery(event.target.value);
-  }, []);
+  const handleSearchChange = React.useCallback(
+    event => {
+      setSearchQuery(event.target.value);
+    },
+    [setSearchQuery]
+  );
 
   React.useEffect(() => {
     const escKeyListener = event => {
@@ -42,7 +45,7 @@ const SearchInput = () => {
     return () => {
       document.removeEventListener(`keydown`, escKeyListener);
     };
-  }, []);
+  }, [setIsSearch]);
 
   return (
     <input
