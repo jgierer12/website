@@ -1,4 +1,4 @@
-module.exports = require(`merge-deep`)(
+module.exports = require(`lodash.merge`)(
   require(`@jgierer12/js-configs/eslint/react`),
   {
     globals: {
