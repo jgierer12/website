@@ -1,5 +1,5 @@
 module.exports = {
   rules: {
-    "healthier/no-default-export": "off",
+    "import/no-default-export": "off",
   },
 };
