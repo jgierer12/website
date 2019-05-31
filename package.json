@@ -24,12 +24,12 @@
   "dependencies": {
     "@emotion/core": "^10.0.10",
     "@emotion/styled": "^10.0.10",
-    "boxicons": "^1.9.3",
+    "boxicons": "^2.0.2",
     "destyle.css": "^1.0.5",
     "gatsby": "^2.3.17",
     "gatsby-image": "^2.0.37",
     "gatsby-plugin-emotion": "^4.0.6",
-    "gatsby-plugin-indieweb": "^1.0.0",
+    "gatsby-plugin-indieweb": "^1.0.3",
     "gatsby-plugin-manifest": "^2.0.29",
     "gatsby-plugin-netlify": "^2.0.13",
     "gatsby-plugin-react-helmet": "^3.0.12",
@@ -43,7 +43,7 @@
     "typeface-inter": "^3.3.0"
   },
   "devDependencies": {
-    "@jgierer12/js-configs": "^0.1.1",
+    "@jgierer12/js-configs": "^1.0.1",
     "bundlesize": "^0.17.1",
     "eslint": "^5.16.0",
     "merge-deep": "^3.0.2",
