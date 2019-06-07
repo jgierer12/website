@@ -2,3 +2,10 @@ node_modules
 *.log
 public
 .cache
+.env.*
+
+# Commit built font files to git for now
+# src/fonts/files/dist
+
+# Dank Mono is proprietary
+src/fonts/files/src/dank-mono
