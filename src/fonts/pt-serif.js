@@ -4,18 +4,18 @@ const name = `pt-serif`;
 
 const { Preload } = font(name, [
   {
-    baseName: `PTSerif-Regular`,
+    baseName: `PTF55F`,
   },
   {
-    baseName: `PTSerif-Italic`,
+    baseName: `PTF56F`,
     styles: `font-style: italic;`,
   },
   {
-    baseName: `PTSerif-Bold`,
+    baseName: `PTF75F`,
     styles: `font-weight: 700;`,
   },
   {
-    baseName: `PTSerif-BoldItalic`,
+    baseName: `PTF76F`,
     styles: `font-weight: 700; font-style: italic;`,
   },
 ]);

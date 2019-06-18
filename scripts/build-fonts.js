@@ -17,7 +17,7 @@ fonts.forEach(font => {
 
   const fontFiles = fs
     .readdirSync(path.join(fontDir, `src`, font))
-    .filter(file => /\.ttf$/.test(file));
+    .filter(file => /\.[ot]tf$/.test(file));
 
   fontFiles.forEach(fontFile => {
     const subset = new Subset();
