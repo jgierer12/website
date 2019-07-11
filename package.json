@@ -2,7 +2,8 @@
   "private": true,
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "build:fonts": "node scripts/build-fonts.js",
+    "develop": "gatsby develop --host 0.0.0.0",
     "preserve": "run-s build",
     "serve": "gatsby serve",
     "test": "run-s lint build test:size",
@@ -24,10 +25,18 @@
   "dependencies": {
     "@emotion/core": "^10.0.10",
     "@emotion/styled": "^10.0.10",
-    "boxicons": "^2.0.2",
+    "@mdx-js/mdx": "^1.0.0",
+    "@mdx-js/react": "^1.0.0",
+    "boxicons": "^2.0.0",
+    "date-fns": "^1.30.1",
     "destyle.css": "^1.0.5",
+    "dotenv": "^8.0.0",
+    "emotion": "^10.0.9",
+    "focus-visible": "^4.1.5",
+    "fuse.js": "^3.4.4",
     "gatsby": "^2.3.17",
     "gatsby-image": "^2.0.37",
+    "gatsby-mdx": "^0.6.2",
     "gatsby-plugin-emotion": "^4.0.6",
     "gatsby-plugin-indieweb": "^1.0.3",
     "gatsby-plugin-manifest": "^2.0.29",
@@ -35,22 +44,27 @@
     "gatsby-plugin-react-helmet": "^3.0.12",
     "gatsby-plugin-react-svg": "^2.1.1",
     "gatsby-plugin-sharp": "^2.0.33",
+    "gatsby-remark-smartypants": "^2.0.9",
     "gatsby-source-filesystem": "^2.0.29",
     "gatsby-transformer-sharp": "^2.1.17",
+    "prism-react-renderer": "^0.1.6",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0",
-    "typeface-inter": "^3.3.0"
+    "react-puggy": "^0.1.1",
+    "typeface-inter": "^3.3.0",
+    "typeface-pt-serif": "^0.0.72",
+    "typeface-space-mono": "^0.0.71"
   },
   "devDependencies": {
     "@jgierer12/js-configs": "^1.0.1",
     "@jgierer12/merge-deep": "^3.1.0",
     "bundlesize": "^0.18.0",
     "eslint": "^6.0.1",
+    "glyphhanger": "^3.2.0",
+    "mkdirp": "^0.5.1",
     "npm-run-all": "^4.1.5",
-    "prettier": "^1.16.4"
-  },
-  "resolutions": {
-    "sharp": "0.22.1"
+    "prettier": "^1.16.4",
+    "rimraf": "^2.6.3"
   }
 }
