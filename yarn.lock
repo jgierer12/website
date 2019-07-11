@@ -908,6 +908,15 @@
     eslint-plugin-standard "^4.0.0"
     merge-deep "^3.0.2"
 
+"@jgierer12/merge-deep@^3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@jgierer12/merge-deep/-/merge-deep-3.1.0.tgz#ab0508f50801d9d60fc534da0aea27f9b258b1b8"
+  integrity sha512-bhiu8F55rjftGzD3qpyANco+aVYjT1fd052/jdB9QRm5FxSvjGbn0gUHhw8NRh8jRCLhrU270g1WiMDNh63nEA==
+  dependencies:
+    arr-union "^3.1.0"
+    clone-deep "^4.0.1"
+    kind-of "^3.0.2"
+
 "@mikaelkristiansson/domready@^1.0.9":
   version "1.0.9"
   resolved "https://registry.yarnpkg.com/@mikaelkristiansson/domready/-/domready-1.0.9.tgz#b2b85d8ac7bb2797e577050b61aeaf1b26fbd906"
@@ -2584,6 +2593,15 @@ clone-deep@^0.2.4:
     kind-of "^3.0.2"
     lazy-cache "^1.0.3"
     shallow-clone "^0.1.2"
+
+clone-deep@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/clone-deep/-/clone-deep-4.0.1.tgz#c19fd9bdbbf85942b4fd979c84dcf7d5f07c2387"
+  integrity sha512-neHB9xuzh/wk0dIHweyAXv2aPGZIVk3pLMe+/RNzINf17fe0OG96QroktYAUm7SM1PBnzTabaLboqqxDyMU+SQ==
+  dependencies:
+    is-plain-object "^2.0.4"
+    kind-of "^6.0.2"
+    shallow-clone "^3.0.0"
 
 clone-response@1.0.2:
   version "1.0.2"
@@ -10077,6 +10095,13 @@ shallow-clone@^0.1.2:
     kind-of "^2.0.1"
     lazy-cache "^0.2.3"
     mixin-object "^2.0.1"
+
+shallow-clone@^3.0.0:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/shallow-clone/-/shallow-clone-3.0.1.tgz#8f2981ad92531f55035b01fb230769a40e02efa3"
+  integrity sha512-/6KqX+GVUdqPuPPd2LxDDxzX6CAbjJehAAOKlNpqqUpAqPM6HeL8f+o3a+JsyGjn2lv0WY8UsTgUJjU9Ok55NA==
+  dependencies:
+    kind-of "^6.0.2"
 
 shallow-compare@^1.2.2:
   version "1.2.2"
