@@ -11,7 +11,7 @@ const { url, label, icon } = Astro.props;
 ---
 
 <a href={url}>
-	<span class="icon" style="--space: var(--space-2xs)" aria-label={label}>
+	<span class="icon" style="--space: var(--space-2xs);" aria-label={label}>
 		<Icon name={icon} />
 	</span><slot />
 </a>
