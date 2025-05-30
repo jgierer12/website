@@ -46,10 +46,7 @@ const links = [
 			class="cover__centered cluster"
 			style="--align: center; --justify: center; --space: var(--space-xl);"
 		>
-			<div
-				class="border-radius:circle frame"
-				style="max-inline-size: 15rem;"
-			>
+			<div class="border-radius:circle frame">
 				<Image
 					src={portraitImage}
 					width={240 /* 15rem @ 16px = 240px */}
@@ -90,5 +87,9 @@ const links = [
 
 	ul {
 		list-style-type: none;
+	}
+
+	.frame {
+		inline-size: min(15rem, calc(100vi - var(--space-m)));
 	}
 </style>
