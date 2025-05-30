@@ -8,7 +8,6 @@
 }
 
 body {
-	margin: 0;
 	width: 100%;
 	height: 100%;
 	font-size: var(--text-size-base);
@@ -17,7 +16,6 @@ body {
 *,
 ::after,
 ::before {
-	box-sizing: border-box;
 	background-color: inherit;
 	font-family: inherit;
 	color: inherit;
@@ -26,11 +24,6 @@ body {
 	padding: 0;
 	border: 0 solid currentColor;
 	max-inline-size: var(--measure-m);
-}
-
-:focus {
-	outline: var(--stroke-m) solid currentColor;
-	outline-offset: var(--stroke-m);
 }
 
 html,
@@ -44,12 +37,22 @@ section {
 	max-inline-size: none;
 }
 
-dialog:not([open]) {
-	display: none !important;
+:focus {
+	outline: var(--stroke-m) solid currentColor;
+	outline-offset: var(--stroke-m);
+}
+
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+	line-height: var(--leading-s);
 }
 
 a {
-	color: var(--color-primary);
 	text-decoration: var(--stroke-s) currentColor underline;
 	text-underline-offset: var(--stroke-m);
 

@@ -18,6 +18,8 @@ const { url, label, icon } = Astro.props;
 
 <style>
 	a {
+		color: var(--color-primary);
+
 		& > .icon {
 			position: relative;
 		}
@@ -26,14 +28,17 @@ const { url, label, icon } = Astro.props;
 			content: attr(aria-label);
 
 			z-index: 10;
-			visibility: hidden;
+			visibility: visible;
 			pointer-events: none;
 
 			position: absolute;
 			inset-block-start: 50%;
 			inset-inline-start: calc(-1 * var(--space-xs));
-			transform: scale(0%) translate(-100%, -50%);
+
+			/* Setting the origin to top actually makes it scale up from the
+			 * center because of the -50% upwards translation */
 			transform-origin: center top;
+			transform: scale(100%) translate(-100%, -50%);
 
 			padding-block: var(--space-4xs);
 			padding-inline: var(--space-2xs);
@@ -53,9 +58,10 @@ const { url, label, icon } = Astro.props;
 			text-transform: uppercase;
 			letter-spacing: var(--kerning-l);
 		}
-		&:is(:hover, :focus) > .icon::before {
-			visibility: visible;
-			transform: scale(100%) translate(-100%, -50%);
+
+		&:not(:is(:hover, :focus)) > .icon::before {
+			visibility: hidden;
+			transform: scale(0%) translate(-100%, -50%);
 		}
 	}
 </style>

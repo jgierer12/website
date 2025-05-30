@@ -1,3 +1,8 @@
+/*
+ * CSS Reset
+ * Adapted from https://piccalil.li/blog/a-more-modern-css-reset/
+ */
+
 /* Box sizing rules */
 *,
 *::before,
@@ -32,11 +37,6 @@ ol[role="list"] {
 	list-style: none;
 }
 
-/* Set core body defaults */
-body {
-	min-height: 100vh;
-}
-
 /* Balance text wrapping on headings */
 h1,
 h2,
@@ -69,4 +69,9 @@ textarea:not([rows]) {
 /* Anything that has been anchored to should have extra scroll margin */
 :target {
 	scroll-margin-block: 5ex;
+}
+
+/* Never display closed dialogs */
+dialog:not([open]) {
+	display: none !important;
 }
