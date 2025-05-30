@@ -8,13 +8,14 @@
 	"scripts": {
 		"dev": "astro dev",
 		"build": "astro build",
-		"preview": "astro preview",
+		"preview": "wrangler dev",
 		"astro": "astro"
 	},
 	"dependencies": {
 		"@astrojs/cloudflare": "^12.5.3",
 		"astro": "^5.8.1",
-		"astro-icon": "^1.1.5"
+		"astro-icon": "^1.1.5",
+		"sharp": "^0.34.2"
 	},
 	"devDependencies": {
 		"@iconify-json/fa6-regular": "^1.2.3",

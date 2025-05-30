@@ -1,6 +1,10 @@
 ---
+import { Image } from "astro:assets";
+
 import Layout from "#layouts/Layout.astro";
 import Link from "#components/IndexLink.astro";
+
+import portraitImage from "#assets/images/jonas-gierer.jpg";
 
 const links = [
 	{
@@ -46,7 +50,12 @@ const links = [
 				class="border-radius:circle frame"
 				style="max-inline-size: 15rem;"
 			>
-				<img src="/jonas-gierer.jpg" alt="Jonas Gierer" />
+				<Image
+					src={portraitImage}
+					width={240 /* 15rem @ 16px = 240px */}
+					densities={[1, 2]}
+					alt="Jonas Gierer"
+				/>
 			</div>
 			<div>
 				<h1>Jonas Gierer</h1>
