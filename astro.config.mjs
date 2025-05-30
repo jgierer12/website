@@ -15,6 +15,8 @@ export default defineConfig({
 				cssVariable: "--font-barlow",
 				provider: fontProviders.google(),
 				weights: [400, 700],
+				styles: ["normal"], // NOTE: Remember to add `italic` if using italic text somewhere
+				subsets: ["latin"],
 			},
 		],
 	},
