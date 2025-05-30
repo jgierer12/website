@@ -1,0 +1,67 @@
+:root {
+	line-height: var(--leading-m);
+	font-weight: var(--font-regular);
+	font-family: var(--font-base);
+
+	color: var(--color-black);
+	background-color: var(--color-white);
+}
+
+body {
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	font-size: var(--text-size-base);
+}
+
+*,
+::after,
+::before {
+	box-sizing: border-box;
+	background-color: inherit;
+	font-family: inherit;
+	color: inherit;
+	overflow-wrap: break-word;
+	margin: 0;
+	padding: 0;
+	border: 0 solid currentColor;
+	max-inline-size: var(--measure-m);
+}
+
+:focus {
+	outline: var(--stroke-m) solid currentColor;
+	outline-offset: var(--stroke-m);
+}
+
+html,
+body,
+div,
+main,
+header,
+footer,
+nav,
+section {
+	max-inline-size: none;
+}
+
+dialog:not([open]) {
+	display: none !important;
+}
+
+a {
+	color: var(--color-primary);
+	text-decoration: var(--stroke-s) currentColor underline;
+	text-underline-offset: var(--stroke-m);
+
+	transition-property: text-decoration-color;
+	transition-duration: var(--transition-m);
+	transition-timing-function: var(--ease-out-expo);
+
+	&:not(:is(:hover, :focus)) {
+		text-decoration-color: color-mix(
+			in srgb,
+			currentColor,
+			transparent 75%
+		);
+	}
+}

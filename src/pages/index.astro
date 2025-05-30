@@ -1,0 +1,85 @@
+---
+import Layout from "#layouts/Layout.astro";
+import Link from "#components/IndexLink.astro";
+
+const links = [
+	{
+		label: "Email",
+		icon: "fa6-solid:envelope",
+		url: "mailto:jonas@gierer.xyz",
+		content: "jonas@gierer.xyz",
+	},
+	{
+		label: "GitHub",
+		icon: "simple-icons:github",
+		url: "https://gierer.xyz/github",
+		content: "jgierer12",
+	},
+	{
+		label: "Signal",
+		icon: "simple-icons:signal",
+		url: "https://gierer.xyz/signal",
+		content: "jonas.402",
+	},
+	{
+		label: "Mastodon",
+		icon: "simple-icons:mastodon",
+		url: "https://gierer.xyz/fedi",
+		content: "wetdry.world/@jonas",
+	},
+	{
+		label: "Bluesky",
+		icon: "simple-icons:bluesky",
+		url: "https://gierer.xyz/bsky",
+		content: "jonasgierer.com",
+	},
+];
+---
+
+<Layout>
+	<main class="center cover" style="--min-size: 100vb;">
+		<div
+			class="cover__centered cluster"
+			style="--align: center; --justify: center; --space: var(--space-xl);"
+		>
+			<div
+				class="border-radius:circle frame"
+				style="max-inline-size: 15rem;"
+			>
+				<img src="/jonas-gierer.jpg" alt="Jonas Gierer" />
+			</div>
+			<div>
+				<h1>Jonas Gierer</h1>
+				<ul>
+					{
+						links.map((link) => (
+							<li>
+								<Link
+									url={link.url}
+									label={link.label}
+									icon={link.icon}
+								>
+									{link.content}
+								</Link>
+							</li>
+						))
+					}
+				</ul>
+			</div>
+		</div>
+	</main>
+</Layout>
+
+<style>
+	main {
+		font-size: var(--size-2);
+	}
+
+	h1 {
+		font-size: var(--size-6);
+	}
+
+	ul {
+		list-style-type: none;
+	}
+</style>

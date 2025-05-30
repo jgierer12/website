@@ -1,0 +1,95 @@
+/* @link https://utopia.fyi/type/calculator?c=320,16,1.2,1240,18,1.25,6,2,&s=0.75|0.5|0.25|0.125,1.5|2|3|4|6|8,s-l&g=s,l,xl,12 */
+:root {
+	--size--2: clamp(0.6944rem, 0.6856rem + 0.0444vw, 0.72rem);
+	--size--1: clamp(0.8333rem, 0.8101rem + 0.1159vw, 0.9rem);
+	--size-0: clamp(1rem, 0.9565rem + 0.2174vw, 1.125rem);
+	--size-1: clamp(1.2rem, 1.1283rem + 0.3587vw, 1.4063rem);
+	--size-2: clamp(1.44rem, 1.3295rem + 0.5527vw, 1.7578rem);
+	--size-3: clamp(1.728rem, 1.5648rem + 0.8161vw, 2.1973rem);
+	--size-4: clamp(2.0736rem, 1.8395rem + 1.1704vw, 2.7466rem);
+	--size-5: clamp(2.4883rem, 2.1597rem + 1.6433vw, 3.4332rem);
+	--size-6: clamp(2.986rem, 2.5319rem + 2.2705vw, 4.2915rem);
+}
+
+/* @link https://utopia.fyi/space/calculator/?c=320,12,1.2,1240,16,1.25,6,2,&s=0.75|0.5,1.5|2|3|4|6|8,s-l&g=s,l,2xl,12 */
+:root {
+	--space-2xs: clamp(0.375rem, 0.3315rem + 0.2174vw, 0.5rem);
+	--space-xs: clamp(0.5625rem, 0.4973rem + 0.3261vw, 0.75rem);
+	--space-s: clamp(0.75rem, 0.663rem + 0.4348vw, 1rem);
+	--space-m: clamp(1.125rem, 0.9946rem + 0.6522vw, 1.5rem);
+	--space-l: clamp(1.5rem, 1.3261rem + 0.8696vw, 2rem);
+	--space-xl: clamp(2.25rem, 1.9891rem + 1.3043vw, 3rem);
+	--space-2xl: clamp(3rem, 2.6522rem + 1.7391vw, 4rem);
+	--space-3xl: clamp(4.5rem, 3.9783rem + 2.6087vw, 6rem);
+	--space-4xl: clamp(6rem, 5.3043rem + 3.4783vw, 8rem);
+
+	/* One-up pairs */
+	--space-2xs-xs: clamp(0.375rem, 0.2446rem + 0.6522vw, 0.75rem);
+	--space-xs-s: clamp(0.5625rem, 0.4103rem + 0.7609vw, 1rem);
+	--space-s-m: clamp(0.75rem, 0.4891rem + 1.3043vw, 1.5rem);
+	--space-m-l: clamp(1.125rem, 0.8207rem + 1.5217vw, 2rem);
+	--space-l-xl: clamp(1.5rem, 0.9783rem + 2.6087vw, 3rem);
+	--space-xl-2xl: clamp(2.25rem, 1.6413rem + 3.0435vw, 4rem);
+	--space-2xl-3xl: clamp(3rem, 1.9565rem + 5.2174vw, 6rem);
+	--space-3xl-4xl: clamp(4.5rem, 3.2826rem + 6.087vw, 8rem);
+
+	/* Custom pairs */
+	--space-s-l: clamp(0.75rem, 0.3152rem + 2.1739vw, 2rem);
+}
+
+:root {
+	--font-base: var(--font-barlow);
+
+	--font-regular: 400;
+	--font-bold: 700;
+
+	--leading-xs: 1.1;
+	--leading-s: 1.2;
+	--leading-m: 1.4;
+	--leading-l: 1.6;
+
+	--kerning-s: -0.05ch;
+	--kerning-m: normal;
+	--kerning-l: 0.05ch;
+
+	--measure-xs: 30ch;
+	--measure-s: 45ch;
+	--measure-m: 65ch;
+	--measure-l: 80ch;
+	--measure-xl: 100ch;
+
+	--text-size-base: var(--size-0);
+	--text-size-h1: var(--size-5);
+	--text-size-h2: var(--size-4);
+	--text-size-h3: var(--size-3);
+	--text-size-h4: var(--size-2);
+
+	--stroke-s: 1px;
+	--stroke-m: 2px;
+	--stroke-l: 4px;
+
+	--radius-s: var(--space-2xs);
+	--radius-m: var(--space-xs);
+	--radius-l: var(--space-s);
+
+	--color-primary: oklch(0.45 0.07 215);
+	--color-primary-mid: oklch(0.5 0.05 215);
+	--color-primary-light: oklch(0.7 0.05 215);
+
+	--color-black: oklch(0.1 0.02 215);
+	--color-gray-darkest: oklch(0.2 0.02 215);
+	--color-gray-dark: oklch(0.4 0.02 215);
+	--color-gray-mid: oklch(0.6 0.02 215);
+	--color-gray-light: oklch(0.8 0.02 215);
+	--color-gray-lightest: oklch(0.9 0.02 215);
+	--color-white: oklch(0.99 0.01 215);
+
+	--transition-s: 0.125s;
+	--transition-m: 0.25s;
+	--transition-l: 0.5s;
+
+	/* https://easings.net/ */
+	--ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+	--ease-in-out-expo: cubic-bezier(0.87, 0, 0.13, 1);
+	--ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+}

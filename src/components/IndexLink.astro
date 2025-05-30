@@ -1,0 +1,61 @@
+---
+import { Icon } from "astro-icon/components";
+
+type Props = {
+	url: string;
+	label: string;
+	icon: string;
+};
+
+const { url, label, icon } = Astro.props;
+---
+
+<a href={url}>
+	<span class="icon" style="--space: var(--space-2xs)" aria-label={label}>
+		<Icon name={icon} />
+	</span><slot />
+</a>
+
+<style>
+	a {
+		& > .icon {
+			position: relative;
+		}
+
+		& > .icon::before {
+			content: attr(aria-label);
+
+			z-index: 10;
+			visibility: hidden;
+			pointer-events: none;
+
+			position: absolute;
+			inset-block-start: 50%;
+			inset-inline-start: calc(-1 * var(--space-xs));
+			transform: scale(0%) translate(-100%, -50%);
+			transform-origin: center top;
+
+			padding-block: var(--space-4xs);
+			padding-inline: var(--space-2xs);
+
+			border-radius: var(--radius-l);
+
+			background-color: var(--color-primary-mid);
+			color: var(--color-white);
+			border-color: var(--color-white);
+			border-width: var(--stroke-s);
+
+			transition-property: transform;
+			transition-duration: var(--transition-m);
+			transition-timing-function: var(--ease-out-back);
+
+			font-size: var(--size-0);
+			text-transform: uppercase;
+			letter-spacing: var(--kerning-l);
+		}
+		&:hover > .icon::before {
+			visibility: visible;
+			transform: scale(100%) translate(-100%, -50%);
+		}
+	}
+</style>

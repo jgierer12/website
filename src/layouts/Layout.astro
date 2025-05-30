@@ -1,0 +1,25 @@
+---
+import { Font } from "astro:assets";
+
+import "#styles/reset.css";
+import "#styles/variables.css";
+import "#styles/utility.css";
+import "#styles/layouts.css";
+import "#styles/global.css";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<!-- TODO: Add favicon -->
+		<!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
+		<meta name="generator" content={Astro.generator} />
+		<Font cssVariable="--font-barlow" preload />
+		<title>Jonas Gierer</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>

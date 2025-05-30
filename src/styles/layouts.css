@@ -1,0 +1,267 @@
+/* Container
+-----------------------------------------------------------------------*/
+.container {
+	--container-name: unset;
+
+	display: block;
+	container-type: inline-size;
+	container-name: var(--container-name);
+}
+
+/* Box
+-----------------------------------------------------------------------*/
+.box {
+	--border-width: var(--stroke-m);
+	--padding: var(--space-m);
+	--background: var(--color-white);
+	--color: var(--color-black);
+
+	display: block;
+	padding: var(--padding);
+	border-width: var(--border-width);
+	background-color: var(--background) !important;
+	color: var(--color) !important;
+
+	/* for high contrast mode */
+	outline: 0.125rem solid transparent;
+	outline-offset: -0.125rem;
+}
+
+/* The Stack
+-----------------------------------------------------------------------*/
+.stack {
+	--space: var(--space-m);
+
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+
+	& > * + * {
+		margin-block-start: var(--space);
+	}
+
+	& > .stack__split-after {
+		margin-block-end: auto;
+	}
+	&:has(> .stack__split-after):only-child {
+		block-size: 100%;
+	}
+}
+
+/* The Center
+-----------------------------------------------------------------------*/
+.center {
+	--max-size: var(--measure-m);
+
+	display: block;
+	margin-inline: auto;
+	max-inline-size: var(--max-size);
+
+	/* Intrinsic Centering: That is, centering elements based on their natural,
+	 * content-based widths. */
+	&.center--intrinsic {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+}
+
+/* The Cluster
+-----------------------------------------------------------------------*/
+.cluster {
+	--space: var(--space-m);
+	--justify: flex-start;
+	--align: flex-start;
+
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: var(--justify);
+	align-items: var(--align);
+	gap: var(--space);
+}
+
+/* The Sidebar
+-----------------------------------------------------------------------*/
+.sidebar {
+	--side-width: var(--measure-xs);
+	--content-min: 50%;
+	--space: var(--space-m);
+
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--space);
+
+	&.sidebar--no-stretch {
+		align-items: flex-start;
+	}
+
+	& > * {
+		flex-basis: var(--side-width);
+		flex-grow: 1;
+	}
+
+	/* main content */
+	&:not(.sidebar--right) > :last-child,
+	&.sidebar--right > :first-child {
+		flex-basis: 0;
+		flex-grow: 999;
+
+		min-inline-size: min(var(--content-min), 100%);
+	}
+}
+
+/* The Switcher
+-----------------------------------------------------------------------*/
+.switcher {
+	--threshold: var(--measure-xs);
+	--space: var(--space-m);
+
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--space);
+
+	& > * {
+		flex-grow: 1;
+		flex-basis: calc((var(--threshold) - 100%) * 999);
+	}
+}
+
+/* The Cover
+-----------------------------------------------------------------------*/
+.cover {
+	--min-size: 50vb;
+	--padding: var(--space-m);
+
+	display: flex;
+	flex-direction: column;
+	min-block-size: var(--min-size);
+	padding: var(--padding);
+
+	& > * {
+		margin-block: var(--space);
+	}
+
+	& > :first-child:not(.cover__centered) {
+		margin-block-start: 0;
+	}
+
+	& > :last-child:not(.cover__centered) {
+		margin-block-end: 0;
+	}
+
+	& > .cover__centered {
+		margin-block: auto;
+	}
+}
+
+/* The Grid
+-----------------------------------------------------------------------*/
+.grid {
+	--min: var(--measure-xs);
+	--space: var(--space-m);
+
+	display: grid;
+	align-content: start;
+	gap: var(--space);
+	grid-template-columns: repeat(auto-fit, minmax(min(var(--min), 100%), 1fr));
+}
+
+/* The Frame
+-----------------------------------------------------------------------*/
+/* NOTE: Should only have one child */
+.frame {
+	--ratio: 1/1;
+
+	aspect-ratio: var(--ratio);
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	& > img,
+	& > video {
+		inline-size: 100%;
+		block-size: 100%;
+		object-fit: cover;
+	}
+}
+
+/* The Reel
+-----------------------------------------------------------------------*/
+.reel {
+	--item-width: auto;
+	--height: auto;
+	--track-color: inherit;
+	--thumb-color: inherit;
+	--space: var(--space-m);
+
+	display: flex;
+	block-size: var(--height);
+	overflow-inline: auto;
+	overflow-block: hidden;
+	scrollbar-color: var(--thumb-color) var(--track-color);
+
+	& > * {
+		flex: 0 0 var(--item-width);
+	}
+
+	& > img {
+		block-size: 100%;
+		flex-basis: auto;
+		inline-size: auto;
+	}
+
+	& > * + * {
+		margin-inline-start: var(--space);
+	}
+
+	&.reel--overflowing {
+		padding-block-end: var(--space);
+	}
+
+	&.reel--snapping {
+		scroll-snap-type: both mandatory;
+
+		& > * {
+			scroll-snap-align: center;
+		}
+	}
+}
+
+/* Icon
+-----------------------------------------------------------------------*/
+.icon {
+	--space: var(--space-m);
+
+	display: inline-flex;
+	align-items: baseline;
+	margin-inline-end: var(--space);
+
+	& > svg {
+		block-size: 0.75em;
+		block-size: 1cap;
+		inline-size: 0.75em;
+		inline-size: 1cap;
+	}
+}
+
+/* Imposter
+-----------------------------------------------------------------------*/
+.imposter {
+	position: absolute;
+	inset-block-start: 50%;
+	inset-inline-start: 50%;
+	transform: translate(-50%, -50%);
+
+	&.imposter--no-breakout {
+		--space: var(--space-m);
+
+		max-inline-size: calc(100% - (var(--margin) * 2));
+		max-block-size: calc(100% - (var(--margin) * 2));
+		overflow: auto;
+	}
+
+	&.imposter--fixed {
+		position: fixed;
+	}
+}
