@@ -53,7 +53,7 @@ const { url, label, icon } = Astro.props;
 			text-transform: uppercase;
 			letter-spacing: var(--kerning-l);
 		}
-		&:hover > .icon::before {
+		&:is(:hover, :focus) > .icon::before {
 			visibility: visible;
 			transform: scale(100%) translate(-100%, -50%);
 		}
