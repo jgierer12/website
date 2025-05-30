@@ -46,7 +46,7 @@ const links = [
 			class="cover__centered cluster"
 			style="--align: center; --justify: center; --space: var(--space-xl);"
 		>
-			<div class="border-radius:circle frame">
+			<div class="frame">
 				<Image
 					src={portraitImage}
 					width={240 /* 15rem @ 16px = 240px */}
@@ -92,5 +92,6 @@ const links = [
 
 	.frame {
 		inline-size: min(15rem, calc(100vi - var(--space-m)));
+		border-radius: 100%;
 	}
 </style>
